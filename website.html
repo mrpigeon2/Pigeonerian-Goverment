@@ -447,7 +447,7 @@
 <body>
     <div class="container">
         <header>
-            <img src="Images/Govermentsymbol.png" alt="Government Emblem" class="header-emblem">
+            <img src="Images/coat2.png" alt="Government Emblem" class="header-emblem">
             <img src="Images/Theflag.png" alt="National Flag" class="header-flag">
             <div class="coat-of-arms">★★★</div>
             <h1>The Democratic Republic of Pigeonaria</h1>
@@ -461,6 +461,8 @@
                 <li><a href="#services">Citizen Services</a></li>
                 <li><a href="#transparency">Transparency</a></li>
                 <li><a href="#elections">Elections</a></li>
+                <li><a href="thetwocourts.html">Supreme Court</a></li>
+                <li><a href="thetwocourts.html">Constitutional Court</a></li>
                 <li><a href="#diplomatic-contact">Contact</a></li>
             </ul>
         </nav>
@@ -602,13 +604,19 @@
             
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
+                    const href = this.getAttribute('href');
                     
-                    if (targetSection) {
-                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    // Only prevent default for internal anchor links (starting with #)
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        const targetSection = document.getElementById(targetId);
+                        
+                        if (targetSection) {
+                            targetSection.scrollIntoView({ behavior: 'smooth' });
+                        }
                     }
+                    // External links (like .html files) will work normally
                 });
             });
         });
