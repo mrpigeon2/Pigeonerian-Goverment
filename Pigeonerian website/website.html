@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Democratic Republic of Pigeonaria - Official Government Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #1e3c72 0%, #ffd700 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+        
+        .ministry-section {
+            padding: 3rem 2rem;
+            background: #f8f9fa;
+        }
+        
+        .ministry-section h2 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+        }
+        
+        .ministry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .ministry-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 4px solid #1e3c72;
+        }
+        
+        .ministry-card h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+        
+        .ministry-card .minister {
+            font-weight: bold;
+            color: #2a5298;
+            margin-bottom: 0.5rem;
+        }
+        
+        .services-section {
+            padding: 3rem 2rem;
+        }
+        
+        .services-section h2 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+        }
+        
+        .service-item {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid #ffd700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .service-btn {
+            background: #1e3c72;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .service-btn:hover {
+            background: #2a5298;
+        }
+        
+        .transparency-section {
+            padding: 3rem 2rem;
+            background: #e9ecef;
+        }
+        
+        .transparency-section h2 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+        }
+        
+        .transparency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .transparency-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .transparency-card .icon {
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+        
+        .elections-section {
+            padding: 3rem 2rem;
+        }
+        
+        .elections-section h2 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+        }
+        
+        .election-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .election-countdown {
+            background: #1e3c72;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        
+        .contact-section {
+            padding: 3rem 2rem;
+            background: #f8f9fa;
+        }
+        
+        .contact-section h2 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .contact-card h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .coat-of-arms {
+            width: 80px;
+            height: 80px;
+            background: #ffd700;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #1e3c72;
+            border: 3px solid white;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .motto {
+            font-style: italic;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: #2a5298;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        main {
+            padding: 3rem 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 8px;
+            border-left: 5px solid #ffd700;
+        }
+        
+        .hero h2 {
+            color: #1e3c72;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-top: 4px solid #1e3c72;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .card h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .card p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .stats {
+            background: #1e3c72;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            padding: 1rem;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffd700;
+            display: block;
+        }
+        
+        .news {
+            padding: 3rem 2rem;
+            background: #f8f9fa;
+        }
+        
+        .news h2 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+        }
+        
+        .news-item {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid #ffd700;
+        }
+        
+        .news-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background: #1e3c72;
+            color: white;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+        
+        .copyright {
+            border-top: 1px solid #2a5298;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            color: #ccc;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            main {
+                padding: 2rem 1rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="coat-of-arms">★★★</div>
+            <h1>The Democratic Republic of Pigeonaria</h1>
+            <p class="motto">"Liberty through Law, Order through Consensus"</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#ministries">Ministries</a></li>
+                <li><a href="#services">Citizen Services</a></li>
+                <li><a href="#transparency">Transparency</a></li>
+                <li><a href="#elections">Elections</a></li>
+                <li><a href="#diplomatic-contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <!-- National Symbols Section -->
+        <section style="background: white; padding: 2rem; text-align: center; border-bottom: 3px solid #ffd700;">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <img src="https://i.imgur.com/placeholder-flag.png" alt="National Flag of Pigeonaria" style="max-width: 300px; height: auto; border: 2px solid #1e3c72; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display: none; width: 300px; height: 180px; background: linear-gradient(to right, #1e3c72 0%, #1e3c72 33%, #dc143c 33%, #dc143c 66%, #ffd700 66%, #ffd700 100%); border: 2px solid #1e3c72; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); position: relative;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(220, 20, 60, 0.9); padding: 20px; border-radius: 8px; border: 3px solid #ffd700;">
+                            <div style="color: #ffd700; font-size: 3rem;">★</div>
+                            <div style="display: flex; gap: 10px; margin-top: 5px;">
+                                <div style="color: #ffd700; font-size: 2rem;">★</div>
+                                <div style="color: #ffd700; font-size: 2rem;">★</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 0.5rem; color: #1e3c72; font-weight: bold;">National Flag</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://i.imgur.com/placeholder-emblem.png" alt="Government Emblem of Pigeonaria" style="max-width: 250px; height: auto; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display: none; width: 250px; height: 250px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 3px solid #1e3c72; border-radius: 50%; position: relative; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                            <div style="font-size: 4rem; color: #1e3c72;">🕊️</div>
+                            <div style="color: #ffd700; font-size: 2rem; margin-top: -10px;">★★★</div>
+                            <div style="color: #1e3c72; font-size: 0.8rem; font-weight: bold; margin-top: 5px;">PIGEONARIA</div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 0.5rem; color: #1e3c72; font-weight: bold;">Government Emblem</p>
+                </div>
+            </div>
+        </section>
+        
+        <main>
+            <section class="hero">
+                <h2>Welcome to the Official Government Portal</h2>
+                <p>The Democratic Republic of Pigeonaria is a sovereign constitutional parliamentary republic founded upon the principle that all public power proceeds from the people. We are committed to transparency, democracy, and the rule of law.</p>
+            </section>
+            
+            <section class="grid">
+                <div class="card">
+                    <h3>Council of Wings</h3>
+                    <p>Our national legislature and supreme decision-making body represents the people and enacts all laws, budgets, and policies. The Council ensures proportional representation and democratic governance through open debate and recorded votes.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Prime Minister's Office</h3>
+                    <p>The Head of Government presides over the executive branch and maintains the confidence of the Council of Wings. The government acts collectively through the Cabinet of Ministers across seven key ministries.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Independent Judiciary</h3>
+                    <p>Our courts administer justice in accordance with law, with judges appointed for life. The Supreme Court handles civil and criminal matters, while the Constitutional Court safeguards our fundamental law.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Government Oversight</h3>
+                    <p>The High Commissioner for Government Oversight, National Audit Office, and Ombudsman ensure no authority acts above the law, investigating corruption and defending individual rights.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Citizen Services</h3>
+                    <p>Access voter registration, petition submissions, public document requests, and other essential services through our transparent and accessible digital platforms.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>International Relations</h3>
+                    <p>As a neutral state, Pigeonaria maintains diplomatic relations based on mutual respect, peace, and lawful cooperation while preserving our independence and constitutional values.</p>
+                </div>
+            </section>
+        </main>
+        
+        <section class="stats">
+            <h2>Republic at a Glance</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span>Provinces</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">7</span>
+                    <span>Ministries</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2026</span>
+                    <span>Founded</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span>Transparency</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="news">
+            <h2>Government Gazette - Latest Updates</h2>
+            
+            <div class="news-item">
+                <div class="news-date">February 22, 2026</div>
+                <h3>Council of Wings Convenes First Legislative Session</h3>
+                <p>The Council of Wings held its inaugural legislative session, establishing parliamentary procedures and committee structures. The session focused on foundational governance frameworks and preparation for future democratic elections.</p>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-date">February 18, 2026</div>
+                <h3>Environmental Protection Framework Announced</h3>
+                <p>The Ministry of Environment unveils comprehensive biodiversity protection initiatives and renewable energy expansion programs, reinforcing our commitment to intergenerational responsibility and sustainable development.</p>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-date">February 12, 2026</div>
+                <h3>Digital Rights and Privacy Protections Established</h3>
+                <p>Enhanced cybersecurity measures and digital privacy protections now in effect, ensuring citizen data security and transparent government technology use as the Republic builds its digital infrastructure.</p>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Government Branches</h4>
+                    <a href="how the council of wings works.html">Council of Wings</a>
+                    <a href="#">Prime Minister's Office</a>
+                    <a href="#">Supreme Court</a>
+                    <a href="#">Constitutional Court</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Ministries</h4>
+                    <a href="#">Administration</a>
+                    <a href="#">Culture</a>
+                    <a href="#">Defense</a>
+                    <a href="#">Treasury</a>
+                    <a href="#">Environment</a>
+                    <a href="#">Science & Technology</a>
+                    <a href="#">Foreign Affairs</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Citizen Resources</h4>
+                    <a href="#">Government Gazette</a>
+                    <a href="#">Voter Registration</a>
+                    <a href="#">Public Documents</a>
+                    <a href="#">Citizen Initiative System</a>
+                    <a href="#">Ombudsman Services</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>About Pigeonaria</h4>
+                    <a href="#">Constitution</a>
+                    <a href="#">National Symbols</a>
+                    <a href="#">History</a>
+                    <a href="#">Provinces</a>
+                    <a href="#">International Relations</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 The Democratic Republic of Pigeonaria. All rights reserved.</p>
+                <p>Capital: Featherhold | Currency: Pigeonarian Ducat (ⱣD) | A nation of reason, neutrality, and freedom.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+<script>
+        // Simple navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <!-- About Us Section -->
+    <section id="about" class="ministry-section">
+        <h2>About the Democratic Republic of Pigeonaria</h2>
+        <div class="ministry-grid">
+            <div class="ministry-card">
+                <h3>Our Nation</h3>
+                <p>The Democratic Republic of Pigeonaria stands as a beacon of democratic governance, constitutional law, and peaceful diplomacy. Founded in 2026, our republic operates under the principle that all legitimate authority derives from the consent of the governed.</p>
+            </div>
+            
+            <div class="ministry-card">
+                <h3>Our Values</h3>
+                <p>We are committed to transparency, rule of law, individual liberty, and international cooperation. Our neutral stance allows us to serve as mediators and peacekeepers while maintaining our sovereignty and democratic institutions.</p>
+            </div>
+            
+            <div class="ministry-card">
+                <h3>Government Structure</h3>
+                <p>Our parliamentary system ensures democratic representation through the Council of Wings, executive leadership through the Prime Minister's Office, and judicial independence through our court system.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- International Contact Section -->
+    <section id="diplomatic-contact" class="contact-section">
+        <h2>International Relations & Diplomatic Contact</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Prime Minister's Office</h3>
+                <p><strong>Head of Government & Acting Minister of Foreign Affairs</strong></p>
+                <p>For diplomatic inquiries, international cooperation, and official state communications, foreign governments and international organizations may contact:</p>
+                <p><strong>Discord:</strong> loli292</p>
+                <p><em>All diplomatic communications are conducted with full transparency and in accordance with international law.</em></p>
+            </div>
+            
+            <div class="contact-card">
+                <h3>Diplomatic Relations</h3>
+                <p>The Democratic Republic of Pigeonaria welcomes diplomatic contact from all nations committed to peaceful cooperation and mutual respect.</p>
+                <p>We are open to:</p>
+                <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                    <li>Trade agreements</li>
+                    <li>Cultural exchanges</li>
+                    <li>Mutual recognition treaties</li>
+                    <li>International cooperation initiatives</li>
+                </ul>
+            </div>
+            
+            <div class="contact-card">
+                <h3>Neutral Mediation Services</h3>
+                <p>As a neutral republic, Pigeonaria offers mediation and arbitration services for international disputes, committed to peaceful resolution and adherence to international law.</p>
+                <p>Our diplomatic corps operates under strict neutrality principles while maintaining our constitutional values and democratic governance.</p>
+            </div>
+        </div>
+    </section>
+</html>
+<!-- Additional Sections for Enhanced Content -->
+
+<!-- Ministries Section -->
+<section id="ministries" class="ministry-section">
+    <h2>Government Ministries</h2>
+    <div class="ministry-grid">
+        <div class="ministry-card">
+            <h3>Ministry of Administration</h3>
+            <div class="minister">Minister: </div>
+            <p>Responsible for civil service management, public administration efficiency, and government operations. Oversees personnel policies, administrative reforms, and inter-ministerial coordination to ensure effective governance.</p>
+        </div>
+        
+        <div class="ministry-card">
+            <h3>Ministry of Culture</h3>
+            <div class="minister">Minister: </div>
+            <p>Preserves and promotes Pigeonarian cultural heritage, arts, and national identity. Manages museums, cultural institutions, national celebrations, and educational programs that strengthen our democratic values.</p>
+        </div>
+        
+        <div class="ministry-card">
+            <h3>Ministry of Defense</h3>
+            <div class="minister">Minister: </div>
+            <p>Maintains national security while upholding our neutral status. Focuses on peacekeeping capabilities, disaster response, and international humanitarian missions in accordance with our constitutional principles.</p>
+        </div>
+        
+        <div class="ministry-card">
+            <h3>Ministry of Treasury</h3>
+            <div class="minister">Minister: </div>
+            <p>Manages public finances, taxation policy, and economic planning. Ensures fiscal responsibility, transparent budgeting, and sustainable economic growth that benefits all citizens of the republic.</p>
+        </div>
+        
+        <div class="ministry-card">
+            <h3>Ministry of Environment</h3>
+            <div class="minister">Minister: </div>
+            <p>Protects our natural heritage and promotes sustainable development. Leads climate action initiatives, biodiversity conservation, and renewable energy programs for future generations.</p>
+        </div>
+        
+        <div class="ministry-card">
+            <h3>Ministry of Science & Technology</h3>
+            <div class="minister">Minister: </div>
+            <p>Advances scientific research, technological innovation, and digital infrastructure. Promotes education in STEM fields and ensures technological progress serves democratic values and citizen welfare.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Citizen Services Section -->
+<section id="services" class="services-section">
+    <h2>Citizen Services</h2>
+    
+    <div class="service-item">
+        <div>
+            <h3>Voter Registration & Electoral Services</h3>
+            <p>Register to vote, update voter information, and access electoral resources. All citizens have the right to participate in our democratic process.</p>
+        </div>
+        <a href="#" class="service-btn">Access Service</a>
+    </div>
+    
+    <div class="service-item">
+        <div>
+            <h3>Citizen Initiative System</h3>
+            <p>Submit policy proposals, petition the government, and participate in direct democracy initiatives. Your voice matters in shaping our republic.</p>
+        </div>
+        <a href="#" class="service-btn">Submit Initiative</a>
+    </div>
+    
+    <div class="service-item">
+        <div>
+            <h3>Public Document Access</h3>
+            <p>Request government documents, access public records, and review legislative proceedings. Transparency is fundamental to our democracy.</p>
+        </div>
+        <a href="#" class="service-btn">Request Documents</a>
+    </div>
+    
+    <div class="service-item">
+        <div>
+            <h3>Ombudsman Services</h3>
+            <p>Report government misconduct, seek assistance with bureaucratic issues, and protect your rights as a citizen of the republic.</p>
+        </div>
+        <a href="#" class="service-btn">Contact Ombudsman</a>
+    </div>
+    
+    <div class="service-item">
+        <div>
+            <h3>Business Registration & Licensing</h3>
+            <p>Start a business, obtain permits, and access economic development resources. We support entrepreneurship and free enterprise.</p>
+        </div>
+        <a href="#" class="service-btn">Business Services</a>
+    </div>
+    
+    <div class="service-item">
+        <div>
+            <h3>Immigration & Citizenship</h3>
+            <p>Apply for residency, citizenship, or work permits. Learn about pathways to becoming a full citizen of our democratic republic.</p>
+        </div>
+        <a href="#" class="service-btn">Immigration Info</a>
+    </div>
+</section>
+
+<!-- Transparency Section -->
+<section id="transparency" class="transparency-section">
+    <h2>Government Transparency</h2>
+    <div class="transparency-grid">
+        <div class="transparency-card">
+            <div class="icon">📊</div>
+            <h3>Budget Transparency</h3>
+            <p>Complete government budgets, expenditure reports, and financial audits are published quarterly. Every ducat spent is accounted for and publicly accessible.</p>
+        </div>
+        
+        <div class="transparency-card">
+            <div class="icon">📋</div>
+            <h3>Legislative Records</h3>
+            <p>All Council of Wings proceedings, voting records, and legislative debates are live-streamed and archived. Democracy thrives in the light of public scrutiny.</p>
+        </div>
+        
+        <div class="transparency-card">
+            <div class="icon">🏛️</div>
+            <h3>Government Meetings</h3>
+            <p>Cabinet meetings, ministerial briefings, and policy discussions are documented and made public within 48 hours, with only national security exceptions.</p>
+        </div>
+        
+        <div class="transparency-card">
+            <div class="icon">📈</div>
+            <h3>Performance Metrics</h3>
+            <p>Government efficiency indicators, service delivery statistics, and policy outcome measurements are updated monthly and freely available to all citizens.</p>
+        </div>
+        
+        <div class="transparency-card">
+            <div class="icon">🔍</div>
+            <h3>Anti-Corruption Measures</h3>
+            <p>The High Commissioner for Government Oversight publishes annual reports on corruption investigations, with full disclosure of findings and remedial actions.</p>
+        </div>
+        
+        <div class="transparency-card">
+            <div class="icon">📱</div>
+            <h3>Digital Transparency</h3>
+            <p>Our open data portal provides machine-readable access to government datasets, enabling citizen analysis and third-party oversight of public policy.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Elections Section -->
+<section id="elections" class="elections-section">
+    <h2>Democratic Elections</h2>
+    
+    <div class="election-countdown">
+        <h3>Population Requirement for Elections</h3>
+        <div class="countdown-number">31</div>
+        <p>Discord server members needed to hold elections</p>
+        <p><em>We need to reach 31 members before elections can be held</em></p>
+    </div>
+    
+    <div class="election-info">
+        <h3>Electoral System</h3>
+        <p>The Democratic Republic of Pigeonaria employs a proportional representation system ensuring every citizen's vote carries equal weight. Our elections are conducted with complete transparency, international observation, and rigorous security measures.</p>
+        
+        <h4>Key Electoral Principles:</h4>
+        <ul style="margin-top: 1rem; padding-left: 2rem;">
+            <li><strong>Universal Suffrage:</strong> All citizens have the right to vote</li>
+            <li><strong>Secret Ballot:</strong> Voting privacy is absolutely protected unless you choose to leak your own vote its clearly up to the voters</li>
+            <li><strong>Proportional Representation:</strong> Seats allocated based on vote percentages</li>
+            <li><strong>Independent Oversight:</strong> Elections managed by non-partisan commission</li>
+            <li><strong>International Monitoring:</strong> Open to foreign election observers</li>
+            <li><strong>Accessible Voting:</strong> Multiple voting methods and accessibility accommodations</li>
+        </ul>
+    </div>
+    
+    <div class="election-info">
+        <h3>Political Parties</h3>
+        <p>The following political parties are registered and eligible to participate in future elections once the population requirement is met:</p>
+        <div style="margin-top: 1rem;">
+            <p><strong>EarthFirst Alliance:</strong> center party, pro environmental and does NOT support any nuclear efforts</p>
+            <p><strong>Ressortissants of Pigeonaria:</strong> Nationalist party</p>
+            <p><strong>The Pioneer Party:</strong> Pro buisness center right party</p>
+        </div>
+    </div>
+</section>
+
+<!-- Constitution Section -->
+<section class="ministry-section">
+    <h2>Constitutional Foundation</h2>
+    <div class="ministry-grid">
+        <div class="ministry-card">
+            <h3>Fundamental Rights</h3>
+            <p>Our constitution guarantees freedom of speech, assembly, religion, and press. Every citizen enjoys equal protection under law, due process rights, and protection from arbitrary government action. These rights are enforceable in our independent courts.</p>
+        </div>
+        
+        <div class="ministry-card">
+            <h3>Separation of Powers</h3>
+            <p>Legislative power rests with the Council of Wings, executive authority with the Prime Minister and Cabinet, and judicial power with independent courts. This separation ensures no single branch can dominate our democratic system.</p>
+        </div>
+        
+        <div class="ministry-card">
+            <h3>Constitutional Amendment Process</h3>
+            <p>Our constitution can be amended through a rigorous democratic process requiring supermajority support in the Council of Wings and ratification by popular referendum, ensuring stability while allowing for democratic evolution.</p>
+        </div>
+    </div>
+</section>
+
+<!-- International Relations Section -->
+<section class="services-section">
+    <h2>International Relations</h2>
+    
+    <div class="service-item">
+        <div>
+            <h3>Neutral Diplomacy</h3>
+            <p>Pigeonaria maintains strict neutrality in international conflicts while actively promoting peace, human rights, and international law through diplomatic channels and multilateral organizations.</p>
+        </div>
+    </div>
+    
+    <div class="service-item">
+        <div>
+            <h3>Trade Relations</h3>
+            <p>We welcome fair trade partnerships based on mutual benefit, environmental sustainability, and respect for labor rights. Our economy is open but regulated to protect citizen welfare.</p>
+        </div>
+    </div>
+    
+    <div class="service-item">
+        <div>
+            <h3>Cultural Exchange</h3>
+            <p>Educational exchanges, cultural programs, and academic cooperation strengthen international understanding while preserving our unique democratic heritage and national identity.</p>
+        </div>
+    </div>
+    
+    <div class="service-item">
+        <div>
+            <h3>Humanitarian Aid</h3>
+            <p>As a prosperous democracy, we contribute to international humanitarian efforts, disaster relief, and development assistance, particularly for nations building democratic institutions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Provincial Government Section -->
+<section class="transparency-section">
+    <h2>Provincial Administration</h2>
+    <div class="transparency-grid">
+        <div class="transparency-card">
+            <div class="icon">🏛️</div>
+            <h3>Featherhold Province</h3>
+            <p>Our capital province houses the national government and serves as the political and cultural center of the republic. Home to our finest universities, museums, and democratic institutions.</p>
+        </div>
+        
+        <div class="transparency-card">
+            <div class="icon">🌾</div>
+            <h3>Wingspan Province</h3>
+            <p>The agricultural heartland of Pigeonaria, producing sustainable crops and renewable energy. Known for its commitment to environmental stewardship and rural democratic participation.</p>
+        </div>
+        
+        <div class="transparency-card">
+            <div class="icon">⚡</div>
+            <h3>Talon Province</h3>
+            <p>Our industrial and technological center, leading innovation in clean manufacturing and digital infrastructure while maintaining strong worker protections and environmental standards.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Economic Information Section -->
+<section class="ministry-section">
+    <h2>Economic Overview</h2>
+    <div class="ministry-grid">
+        <div class="ministry-card">
+            <h3>Economic Philosophy</h3>
+            <p>Pigeonaria operates a social market economy combining free enterprise with strong social protections. We believe economic prosperity must serve democratic values and citizen welfare, not the reverse.</p>
+        </div>
+        
+        <div class="ministry-card">
+            <h3>Key Industries</h3>
+            <p>Our economy is diversified across sustainable agriculture, clean technology manufacturing, financial services, and knowledge-based industries. We prioritize innovation, environmental responsibility, and fair labor practices.</p>
+        </div>
+        
+        <div class="ministry-card">
+            <h3>Currency & Trade</h3>
+            <p>The Pigeonarian Ducat (ⱣD) is our stable national currency. We maintain balanced trade relationships while protecting domestic industries essential to national security and democratic governance.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Discord Community Section -->
+<section class="elections-section" style="background: linear-gradient(135deg, #5865F2 0%, #7289DA 100%); padding: 4rem 2rem;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center; background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
+        <div style="font-size: 4rem; margin-bottom: 1rem;">💬</div>
+        <h2 style="color: #5865F2; margin-bottom: 1rem; font-size: 2.5rem;">Join Our Discord Community!</h2>
+        <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem;">Connect with fellow citizens, participate in discussions, and stay updated on the latest news from the Democratic Republic of Pigeonaria.</p>
+        <a href="https://discord.gg/nAuAw9UF" target="_blank" style="display: inline-block; background: #5865F2; color: white; padding: 1rem 3rem; font-size: 1.3rem; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.3s; box-shadow: 0 4px 10px rgba(88, 101, 242, 0.3);" onmouseover="this.style.background='#4752C4'" onmouseout="this.style.background='#5865F2'">Join Our Server Today!</a>
+        <p style="margin-top: 1.5rem; color: #999; font-size: 0.9rem;">https://discord.gg/nAuAw9UF</p>
+    </div>
+</section>
+
+</html>
