@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judicial Branch - Democratic Republic of Pigeonaria</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 20px 20px 20px;
+            border-bottom: 3px solid #2c5aa0;
+            position: relative;
+            background: linear-gradient(to bottom, #f0f7ff 0%, #ffffff 100%);
+            border-radius: 8px 8px 0 0;
+        }
+        .header-emblem {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+        }
+        .header-flag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 120px;
+            height: 80px;
+        }
+        .court-section {
+            margin-bottom: 50px;
+            padding: 30px;
+            border: 2px solid #2c5aa0;
+            border-radius: 8px;
+            background: linear-gradient(to bottom, #fafbfc 0%, #ffffff 100%);
+            box-shadow: 0 2px 8px rgba(44, 90, 160, 0.1);
+        }
+        .court-title {
+            color: #2c5aa0;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .status {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .description {
+            font-style: italic;
+            margin-bottom: 25px;
+            color: #555;
+            font-size: 1.1em;
+        }
+        .section-header {
+            color: #2c5aa0;
+            font-size: 1.3em;
+            margin: 25px 0 15px 0;
+            font-weight: bold;
+        }
+        .powers-list {
+            list-style: none;
+            padding: 0;
+        }
+        .powers-list li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .powers-list li:before {
+            content: "•";
+            color: #2c5aa0;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .composition-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 15px 0;
+        }
+        .composition-item {
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid #2c5aa0;
+        }
+        .composition-label {
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 5px;
+        }
+        .current-status {
+            background-color: #e7f3ff;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #2c5aa0;
+            margin: 20px 0;
+        }
+        .motto {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #2c5aa0;
+            margin-top: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e7f3ff 100%);
+            border-radius: 6px;
+            border: 1px solid #2c5aa0;
+            box-shadow: 0 2px 6px rgba(44, 90, 160, 0.15);
+        }
+        footer {
+            margin-top: 50px;
+            padding: 30px 20px;
+            background: linear-gradient(to bottom, #2c5aa0 0%, #1e3a70 100%);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        footer a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .footer-divider {
+            margin: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        @media (max-width: 768px) {
+            .composition-grid {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 15px;
+            }
+            .court-title {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="Images/coat2.png" alt="Government Emblem" class="header-emblem">
+            <img src="Images/Theflag.png" alt="National Flag" class="header-flag">
+            <h1>Judicial Branch</h1>
+            <h2>Democratic Republic of Pigeonaria</h2>
+        </div>
+
+        <div class="court-section">
+            <h2 class="court-title">🏛️ Constitutional Court of the Democratic Republic of Pigeonaria</h2>
+            
+            <div class="status">Status: Established 2026 — Pending Judicial Appointments</div>
+            
+            <p class="description">
+                The Constitutional Court is the guardian of the Instrument of Government, ensuring all laws, executive actions, and treaties comply with the Constitution. It defends the democratic order, neutrality, and rule of law that form the foundation of the Republic.
+            </p>
+
+            <h3 class="section-header">Role & Powers</h3>
+            <ul class="powers-list">
+                <li>Reviews laws, decrees, and treaties for constitutional compliance.</li>
+                <li>Protects citizens' fundamental rights under the Constitution.</li>
+                <li>Can strike down or suspend unconstitutional acts.</li>
+                <li>May conduct preventive review of proposed laws before enactment.</li>
+                <li>Oversees constitutional matters during national emergencies.</li>
+            </ul>
+
+            <h3 class="section-header">Composition</h3>
+            <div class="composition-grid">
+                <div class="composition-item">
+                    <div class="composition-label">Judges:</div>
+                    <div>0 (to be appointed)</div>
+                </div>
+                <div class="composition-item">
+                    <div class="composition-label">Appointing Authority:</div>
+                    <div>Judicial Selection Commission (pending formation) + Council of Wings (2/3 confirmation)</div>
+                </div>
+                <div class="composition-item">
+                    <div class="composition-label">Location:</div>
+                    <div>Featherhold National Justice Complex</div>
+                </div>
+            </div>
+
+            <h3 class="section-header">Current Status</h3>
+            <div class="current-status">
+                <p>The Constitutional Court has been formally established under Chapter 11 of the Constitution. Judicial appointments are awaiting the creation of the Judicial Selection Commission.</p>
+                <p>Until the Court convenes, constitutional interpretation is handled provisionally by the Council of Wings through special legal review committees.</p>
+            </div>
+
+            <div class="motto">"Defending the Constitution, Upholding the Republic."</div>
+        </div>
+
+        <div class="court-section">
+            <h2 class="court-title">⚖️ Supreme Court of the Democratic Republic of Pigeonaria</h2>
+            
+            <div class="status">Status: Established 2026 — Pending Judicial Appointments</div>
+            
+            <p class="description">
+                The Supreme Court is the highest authority in civil, criminal, and administrative justice. It ensures equal application of law, protection of individual rights, and accountability of public power.
+            </p>
+
+            <h3 class="section-header">Role & Powers</h3>
+            <ul class="powers-list">
+                <li>Final court of appeal for all lower courts.</li>
+                <li>Interprets and applies national laws in accordance with the Constitution.</li>
+                <li>Resolves civil, criminal, and administrative disputes.</li>
+                <li>Upholds due process, equality before the law, and fair trial standards.</li>
+            </ul>
+
+            <h3 class="section-header">Composition</h3>
+            <div class="composition-grid">
+                <div class="composition-item">
+                    <div class="composition-label">Judges:</div>
+                    <div>0 (to be appointed)</div>
+                </div>
+                <div class="composition-item">
+                    <div class="composition-label">Appointing Authority:</div>
+                    <div>Judicial Selection Commission (pending) + Council of Wings (2/3 confirmation)</div>
+                </div>
+                <div class="composition-item">
+                    <div class="composition-label">Divisions:</div>
+                    <div>Civil, Criminal, Administrative (planned)</div>
+                </div>
+                <div class="composition-item">
+                    <div class="composition-label">Location:</div>
+                    <div>Featherhold National Justice Complex</div>
+                </div>
+            </div>
+
+            <h3 class="section-header">Current Status</h3>
+            <div class="current-status">
+                <p>The Supreme Court has been constitutionally established but remains unstaffed pending the formation of the Judicial Selection Commission.</p>
+                <p>During this interim period, unresolved legal questions are handled by the Council of Wings' Legal Affairs Committee, whose decisions are recorded in the Government Gazette.</p>
+            </div>
+
+            <div class="motto">"Equal Before the Law."</div>
+        </div>
+
+        <footer>
+            <a href="website.html">← Return to Government Portal</a>
+            <div class="footer-divider"></div>
+            <p>&copy; 2026 The Democratic Republic of Pigeonaria. All rights reserved.</p>
+            <p>Capital: Featherhold | Currency: Pigeonarian Ducat (ⱣD)</p>
+        </footer>
+    </div>
+</body>
+</html>
