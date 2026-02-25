@@ -4,7 +4,7 @@
 const searchablePages = [
     {
         title: "Government Portal",
-        url: "website.html",
+        url: "index.html",
         keywords: "government portal home main ministries services transparency elections democracy pigeonaria featherhold prime minister council wings"
     },
     {
@@ -94,6 +94,12 @@ function checkEasterEgg(query) {
     // Easter egg: "pigeon video"
     if (query === 'pigeon video') {
         playEasterEggVideo('videos/pigeon.mp4');
+        return true;
+    }
+    
+    // Easter egg: "sigeon pex"
+    if (query === 'sigeon pex') {
+        playEasterEggVideo('videos/sigeon.mp4');
         return true;
     }
     
