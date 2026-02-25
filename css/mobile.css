@@ -1,0 +1,260 @@
+/* Mobile Responsive Design for Democratic Republic of Pigeonaria */
+
+/* Tablet and smaller (768px and below) */
+@media (max-width: 768px) {
+    /* Navigation */
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 15px;
+    }
+    
+    /* Header adjustments */
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    .header-emblem {
+        width: 60px !important;
+        height: 60px !important;
+        left: 10px !important;
+    }
+    
+    .header-flag {
+        width: 90px !important;
+        height: 60px !important;
+        right: 10px !important;
+    }
+    
+    /* Grids to single column */
+    .ministry-grid,
+    .footer-grid,
+    .composition-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Cards */
+    .card,
+    .ministry-card,
+    .party-card,
+    .organization-card {
+        margin: 10px 0;
+    }
+    
+    /* Buttons */
+    #settingsButton {
+        top: 10px;
+        right: 10px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    #searchButton {
+        top: 10px;
+        right: 65px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    #backToTop {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 45px !important;
+        height: 45px !important;
+    }
+    
+    /* Panels */
+    #settingsPanel,
+    #searchPanel {
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+        max-width: none;
+        top: 70px;
+    }
+    
+    /* Container padding */
+    .container {
+        padding: 15px;
+    }
+    
+    /* Sections */
+    .section,
+    .court-section {
+        padding: 15px;
+    }
+    
+    /* Text sizes */
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    h3 {
+        font-size: 1.2em;
+    }
+    
+    /* Hero section */
+    .hero h2 {
+        font-size: 1.5em;
+    }
+    
+    /* News items */
+    .news-item {
+        padding: 15px;
+    }
+}
+
+/* Mobile phones (480px and below) */
+@media (max-width: 480px) {
+    /* Even smaller text */
+    header h1 {
+        font-size: 1.4em;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+    }
+    
+    h3 {
+        font-size: 1.1em;
+    }
+    
+    /* Smaller emblems */
+    .header-emblem {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    .header-flag {
+        width: 75px !important;
+        height: 50px !important;
+    }
+    
+    /* Compact buttons */
+    #settingsButton,
+    #searchButton {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    #searchButton {
+        right: 55px;
+    }
+    
+    /* Smaller containers */
+    .container {
+        padding: 10px;
+    }
+    
+    .section,
+    .court-section {
+        padding: 12px;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 20px 10px;
+    }
+    
+    .footer-section {
+        margin-bottom: 20px;
+    }
+    
+    /* Loading screen */
+    #pageLoader h2 {
+        font-size: 1.3em;
+    }
+    
+    .loader-emblem {
+        width: 70px !important;
+        height: 70px !important;
+    }
+}
+
+/* Large screens (1200px and above) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .ministry-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Landscape mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    header {
+        padding: 1rem 0;
+    }
+    
+    .header-emblem,
+    .header-flag {
+        top: 0.5rem;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    button,
+    a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    nav ul li a {
+        padding: 18px;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .card:hover,
+    .ministry-card:hover,
+    .party-card:hover {
+        transform: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    #settingsButton,
+    #searchButton,
+    #backToTop,
+    #settingsPanel,
+    #searchPanel,
+    #pageLoader,
+    nav,
+    footer {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .container {
+        box-shadow: none;
+    }
+}
