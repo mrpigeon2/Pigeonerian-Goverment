@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Parties - Democratic Republic of Pigeonaria</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 20px 20px 20px;
+            border-bottom: 3px solid #2c5aa0;
+            position: relative;
+            background: linear-gradient(to bottom, #f0f7ff 0%, #ffffff 100%);
+            border-radius: 8px 8px 0 0;
+        }
+        .header-emblem {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+        }
+        .header-flag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 120px;
+            height: 80px;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border: 2px solid #2c5aa0;
+            border-radius: 8px;
+            background: linear-gradient(to bottom, #fafbfc 0%, #ffffff 100%);
+            box-shadow: 0 2px 8px rgba(44, 90, 160, 0.1);
+        }
+        .section h2 {
+            color: #2c5aa0;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section h3 {
+            color: #2c5aa0;
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
+        }
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+        }
+        .requirements-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .requirements-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2c5aa0;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .party-card {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #2c5aa0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .party-card h4 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+        }
+        .register-box {
+            background: linear-gradient(135deg, #e7f3ff 0%, #f0f7ff 100%);
+            padding: 30px;
+            border-radius: 8px;
+            border: 2px solid #2c5aa0;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .register-box h3 {
+            color: #2c5aa0;
+            margin-bottom: 15px;
+        }
+        .contact-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #2c5aa0;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+        .contact-button:hover {
+            background: #1e3a70;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 30px 20px;
+            background: linear-gradient(to bottom, #2c5aa0 0%, #1e3a70 100%);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        footer a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .footer-divider {
+            margin: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .section h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="Images/coat2.png" alt="Government Emblem" class="header-emblem">
+            <img src="Images/Theflag.png" alt="National Flag" class="header-flag">
+            <h1>Political Parties</h1>
+            <h2>Democratic Republic of Pigeonaria</h2>
+        </div>
+
+        <div class="section">
+            <h2>🗳️ Political Parties in Pigeonaria</h2>
+            <p>Political parties are essential to our democratic system, providing citizens with organized platforms to participate in governance, contest elections, and shape public policy. All parties must operate within constitutional principles and democratic norms.</p>
+        </div>
+
+        <div class="section">
+            <h2>📋 Registered Political Parties</h2>
+            
+            <div class="party-card">
+                <h4>Pioneer Party (PP)</h4>
+                <p><strong>Leader:</strong> Mr. Pigeon</p>
+                <p><strong>Founded:</strong> February 8, 2026 at 01:21</p>
+                <p><strong>Ideology:</strong> Democratic Centre-Right (Pro-Democracy, Pro-Stability, Moderately Conservative, Not Nationalist)</p>
+                <p><strong>Position on League of Servers:</strong> Supported membership</p>
+                <p><strong>Main Goal:</strong> Make Pigeonaria a stable, wealthy, neutral trade power respected for its democracy and economic strength.</p>
+                <p><strong>Key Policies:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Economy:</strong> Free market economy with low corporate taxes to attract investment, support for small businesses and startups, limited government interference, balanced national budget</li>
+                    <li><strong>National Security:</strong> Strong defensive military focused on protecting neutrality, no foreign interventions</li>
+                    <li><strong>Infrastructure:</strong> Investment in transportation, ports, and technology to strengthen trade, urban development with private-sector partnerships</li>
+                    <li><strong>Citizens & Rights:</strong> Strong civil freedoms, independent courts, law and order maintained firmly but fairly</li>
+                    <li><strong>Foreign Relations:</strong> Strict constitutional neutrality, trade with all nations, no military alliances</li>
+                </ul>
+            </div>
+
+            <div class="party-card">
+                <h4>EarthFirst Alliance (EFA)</h4>
+                <p><strong>Leader:</strong> Mr. Hugo</p>
+                <p><strong>Founded:</strong> February 16, 2026 at 18:00</p>
+                <p><strong>Ideology:</strong> Democratic, Anti-Military, Centrist, Pro-Environment</p>
+                <p><strong>Position on League of Servers:</strong> Supported membership</p>
+                <p><strong>Main Goal:</strong> Promote the growth and development of Pigeonaria in a sustainable and modern way, promising good quality of life and safety.</p>
+                <p><strong>Key Policies:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Economy:</strong> Mixed economy with 5% wealth tax, 5% multi-million company tax, startup reliefs, 20% fossil fuel tax, renewable energy subsidies</li>
+                    <li><strong>National Security:</strong> Strong defensive force with sustainable military growth and renewable energy promotion</li>
+                    <li><strong>Infrastructure:</strong> Nuclear urban settlements, pedestrianized roads, efficient public transport (buses, subways, trams), waterway promotion</li>
+                    <li><strong>Citizens & Rights:</strong> High freedoms, accessible justice, free media and press</li>
+                    <li><strong>Foreign Relations:</strong> Trading hub for locally made goods</li>
+                </ul>
+            </div>
+
+            <div class="party-card">
+                <h4>Ressortissants of Pigeonaria (ROP)</h4>
+                <p><strong>Leader:</strong> Monsieur Plumeux</p>
+                <p><strong>Founded:</strong> February 12, 2026 at 17:27</p>
+                <p><strong>Ideology:</strong> Militarist, National Centre-Right (Conservative, Nationalist, Pro-Democracy, Pro-Economy, Anti-Immigration)</p>
+                <p><strong>Position on League of Servers:</strong> Abstained</p>
+                <p><strong>Main Goal:</strong> Increase safety and enforce military dominance, prioritizing citizens of Pigeonaria and fighting to keep them safe and equal.</p>
+                <p><strong>Key Policies:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Economy:</strong> Mixed economy with 15% tax increase on multi-million companies and large bank accounts for military investment, 10% working class tax cut, 10% increase in reformation and stability funds</li>
+                    <li><strong>National Defense:</strong> Strong technological military with focus on air and naval forces for military dominance</li>
+                    <li><strong>Infrastructure:</strong> Rural city spread, increased tech and transport across rural areas, expanded boat transport and export</li>
+                    <li><strong>Citizens & Rights:</strong> Strict law and justice system with authoritarian approach, firm justice enforcement</li>
+                    <li><strong>Foreign Relations:</strong> Neutral trade, neutral alliances</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>✍️ Register a New Political Party</h2>
+            <p>Citizens have the constitutional right to form political parties and participate in democratic governance. To register a new political party in the Democratic Republic of Pigeonaria, your organization must meet the following requirements:</p>
+            
+            <h3>Requirements for Party Registration</h3>
+            <ul class="requirements-list">
+                <li>Party name must be unique and not misleading</li>
+                <li>Must have a written constitution or founding document</li>
+                <li>Cannot advocate for violence or overthrow of the government</li>
+                <li>Leadership structure must be clearly defined</li>
+                <li>Must provide contact information for official communications</li>
+            </ul>
+
+            <h3>Registration Process</h3>
+            <ul class="requirements-list">
+                <li>Submit party name, constitution, and leadership information</li>
+                <li>Review by Electoral Commission (pending establishment)</li>
+                <li>Verification of constitutional compliance</li>
+                <li>Official registration and publication in Government Gazette</li>
+                <li>Right to contest elections and participate in Council of Wings</li>
+            </ul>
+        </div>
+
+        <div class="register-box">
+            <h3>Ready to Register Your Political Party?</h3>
+            <p>Contact the Prime Minister's Office to begin the registration process:</p>
+            <a href="https://discord.gg/nAuAw9UF" class="contact-button">Join Discord Server</a>
+            <p style="margin-top: 15px;"><strong>Direct Contact:</strong> loli292 (Discord)</p>
+        </div>
+
+        <div class="section">
+            <h2>⚖️ Party Rights and Responsibilities</h2>
+            
+            <h3>Rights</h3>
+            <ul class="requirements-list">
+                <li>Contest elections for Council of Wings</li>
+                <li>Propose legislation and policy initiatives</li>
+                <li>Access to public campaign resources (when established)</li>
+                <li>Freedom of political expression and assembly</li>
+                <li>Equal treatment under electoral law</li>
+            </ul>
+
+            <h3>Responsibilities</h3>
+            <ul class="requirements-list">
+                <li>Operate transparently and democratically</li>
+                <li>Respect constitutional principles and rule of law</li>
+                <li>Maintain accurate membership records</li>
+                <li>Comply with campaign finance regulations (when established)</li>
+                <li>Participate constructively in democratic discourse</li>
+            </ul>
+        </div>
+
+        <footer>
+            <a href="website.html">← Return to Government Portal</a>
+            <div class="footer-divider"></div>
+            <p>&copy; 2026 The Democratic Republic of Pigeonaria. All rights reserved.</p>
+            <p>Capital: Featherhold | Currency: Pigeonarian Ducat (ⱣD)</p>
+        </footer>
+    </div>
+</body>
+</html>
