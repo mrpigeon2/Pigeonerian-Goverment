@@ -175,3 +175,157 @@ body.dark-mode #settingsPanel h3 {
 body, .container, .section, .card, .ministry-card, .party-card {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+
+/* Search Button and Panel */
+#searchButton {
+    position: fixed;
+    top: 20px;
+    right: 80px;
+    z-index: 1000;
+    background-color: #2c5aa0;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#searchButton:hover {
+    background-color: #1e3a70;
+    transform: scale(1.1);
+}
+
+#searchPanel {
+    position: fixed;
+    top: 80px;
+    right: 80px;
+    z-index: 999;
+    background: white;
+    border: 2px solid #2c5aa0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: none;
+    min-width: 400px;
+    max-width: 500px;
+}
+
+#searchPanel h3 {
+    margin: 0 0 15px 0;
+    color: #2c5aa0;
+    font-size: 1.2em;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #2c5aa0;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #1e3a70;
+}
+
+.search-button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-button-group button {
+    flex: 1;
+    padding: 10px;
+    background-color: #2c5aa0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+.search-button-group button:hover {
+    background-color: #1e3a70;
+}
+
+#searchResults {
+    max-height: 400px;
+    overflow-y: auto;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 10px;
+}
+
+.search-result-item {
+    display: block;
+    padding: 12px;
+    margin: 5px 0;
+    background: #f8f9fa;
+    border-left: 4px solid #2c5aa0;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.search-result-item:hover {
+    background: #e9ecef;
+}
+
+.search-result-item strong {
+    color: #2c5aa0;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Dark mode search styles */
+body.dark-mode #searchPanel {
+    background: #2d3748;
+    border-color: #4a90e2;
+}
+
+body.dark-mode #searchPanel h3 {
+    color: #4a90e2;
+}
+
+body.dark-mode #searchInput {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #4a90e2;
+}
+
+body.dark-mode .search-result-item {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    border-left-color: #4a90e2;
+}
+
+body.dark-mode .search-result-item:hover {
+    background: #16213e;
+}
+
+body.dark-mode .search-result-item strong {
+    color: #4a90e2;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    #searchPanel {
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+        max-width: none;
+    }
+    
+    #searchButton {
+        right: 70px;
+    }
+}
