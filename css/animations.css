@@ -1,0 +1,235 @@
+/* Loading and Animation Styles for Democratic Republic of Pigeonaria */
+
+/* Page Loader */
+#pageLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+#pageLoader .loader-content {
+    text-align: center;
+    color: white;
+}
+
+#pageLoader .loader-emblem {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+#pageLoader h2 {
+    font-family: 'Georgia', serif;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    animation: fadeInOut 2s ease-in-out infinite;
+}
+
+#pageLoader .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Float Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Fade In/Out Animation */
+@keyframes fadeInOut {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Page Transition */
+body {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Fade-in Elements */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll Reveal Animation */
+.scroll-reveal-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-reveal-element.scroll-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse-animation {
+    animation: pulse 1s ease;
+}
+
+/* Slide In from Left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s ease;
+}
+
+/* Slide In from Right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.6s ease;
+}
+
+/* Bounce In */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.bounce-in {
+    animation: bounceIn 0.8s ease;
+}
+
+/* Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease;
+}
+
+/* Hover Effects */
+.card, .ministry-card, .party-card, .organization-card, .court-section {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover, .ministry-card:hover, .party-card:hover, .organization-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Button Hover Effects */
+button {
+    transition: all 0.3s ease;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Link Hover Effects */
+a {
+    transition: color 0.3s ease;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading Bar (optional) */
+.loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ffd700, #2c5aa0);
+    z-index: 10000;
+    animation: loadingBar 2s ease-in-out;
+}
+
+@keyframes loadingBar {
+    0% { width: 0; }
+    50% { width: 70%; }
+    100% { width: 100%; }
+}
+
+/* Dark Mode Animations */
+body.dark-mode #pageLoader {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
