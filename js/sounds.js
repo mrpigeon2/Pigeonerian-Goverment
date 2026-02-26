@@ -3,7 +3,7 @@
 // Sound manager
 const SoundManager = {
     sound: null,
-    enabled: true,
+    enabled: false, // Default to OFF
     volume: 0.5,
     
     // Initialize sound system
@@ -13,6 +13,7 @@ const SoundManager = {
         if (soundsEnabled !== null) {
             this.enabled = soundsEnabled === 'true';
         }
+        // If no saved preference, sounds remain OFF (enabled: false)
         
         // Load volume setting
         const savedVolume = localStorage.getItem('soundVolume');
