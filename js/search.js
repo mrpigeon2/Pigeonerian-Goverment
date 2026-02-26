@@ -103,6 +103,12 @@ function checkEasterEgg(query) {
         return true;
     }
     
+    // Easter egg: "pigstein files" - redirect to secret page
+    if (query === 'pigstein files') {
+        window.location.href = 'secret-pigstein-files.html';
+        return true;
+    }
+    
     // Add more easter eggs here
     // Example: if (query === 'secret') { ... }
     
