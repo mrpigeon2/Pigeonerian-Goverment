@@ -9,140 +9,575 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/mobile.css">
     <style>
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
+        * {
             margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
         }
+        
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(to bottom, #f5f7fa 0%, #e8eef5 100%);
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+        
         .container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
             background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            min-height: 100vh;
+            overflow-x: hidden;
         }
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 30px 20px 20px 20px;
-            border-bottom: 3px solid #2c5aa0;
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #c41e3a 50%, #1e3c72 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
             position: relative;
-            background: linear-gradient(to bottom, #f0f7ff 0%, #ffffff 100%);
-            border-radius: 8px 8px 0 0;
+            border-bottom: 4px solid #ffd700;
         }
-        .header-emblem {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 80px;
-            height: 80px;
-        }
-        .header-flag {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 120px;
-            height: 80px;
-        }
-        .section {
-            margin-bottom: 40px;
-            padding: 25px;
-            border: 2px solid #2c5aa0;
-            border-radius: 8px;
-            background: linear-gradient(to bottom, #fafbfc 0%, #ffffff 100%);
-            box-shadow: 0 2px 8px rgba(44, 90, 160, 0.1);
-        }
-        .section h2 {
-            color: #2c5aa0;
-            font-size: 1.8em;
-            margin-bottom: 15px;
+        
+        .header-top {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: space-between;
         }
-        .section h3 {
-            color: #2c5aa0;
-            font-size: 1.3em;
-            margin: 20px 0 10px 0;
+        
+        .header-emblem {
+            width: 70px;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
+        
+        .header-flag {
+            width: 100px;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        .header-center {
+            text-align: center;
+            flex: 1;
+            padding: 1rem 2rem;
+        }
+        
+        .coat-of-arms {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 0.5rem;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            font-size: 0.95rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .top-banner {
+            background: linear-gradient(90deg, #1e3c72 0%, #c41e3a 50%, #1e3c72 100%);
+            color: #ffd700;
+            text-align: center;
+            padding: 0.6rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            background: linear-gradient(90deg, #1e3c72 0%, #c41e3a 50%, #1e3c72 100%);
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #ffd700;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        nav li {
+            flex: 0 0 auto;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.2rem;
+            display: block;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+        }
+        
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+            border-bottom-color: #ffd700;
+        }
+        
+        main {
+            padding: 0;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-bottom: 1px solid #e1e8ed;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(30, 60, 114, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero:after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(196, 30, 58, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero h2 {
+            color: #1e3c72;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .hero p {
+            color: #5a6c7d;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            padding: 4rem 2rem;
+            background: #ffffff;
+            border-bottom: 1px solid #e1e8ed;
+        }
+        
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .section h2 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #1e3c72 0%, #c41e3a 50%, #ffd700 100%);
+        }
+        
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
         .principles-list {
             list-style: none;
             padding: 0;
+            max-width: 1000px;
+            margin: 2rem auto;
         }
+        
         .principles-list li {
-            padding: 12px 0;
-            padding-left: 30px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1rem;
+            background: white;
+            border-left: 4px solid #1e3c72;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             position: relative;
-            border-bottom: 1px solid #e9ecef;
+            padding-left: 3.5rem;
+            transition: all 0.3s ease;
         }
+        
         .principles-list li:before {
             content: "🕊️";
             position: absolute;
-            left: 0;
+            left: 1rem;
+            font-size: 1.5rem;
         }
+        
+        .principles-list li:hover {
+            box-shadow: 0 4px 12px rgba(30, 60, 114, 0.15);
+            transform: translateX(5px);
+        }
+        
         .organization-card {
             background: white;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 6px;
-            border-left: 4px solid #2c5aa0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin: 1.5rem auto;
+            border-radius: 4px;
+            border-left: 4px solid #1e3c72;
+            border-top: 2px solid #c41e3a;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            max-width: 1000px;
+            transition: all 0.3s ease;
+            position: relative;
         }
+        
+        .organization-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #ffd700;
+            transition: width 0.3s ease;
+        }
+        
+        .organization-card:hover {
+            box-shadow: 0 4px 16px rgba(30, 60, 114, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .organization-card:hover:before {
+            width: 100%;
+        }
+        
+        .organization-card h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
         .organization-card h4 {
-            color: #2c5aa0;
-            margin-bottom: 10px;
+            color: #1e3c72;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
+        
+        .organization-card p {
+            color: #5a6c7d;
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+        }
+        
         .status-badge {
             display: inline-block;
-            padding: 5px 15px;
+            padding: 0.3rem 0.8rem;
             border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
-            margin-left: 10px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 0.5rem;
         }
+        
         .status-member {
-            background-color: #d4edda;
-            color: #155724;
-        }
-        .status-observer {
-            background-color: #fff3cd;
-            color: #856404;
-        }
-        footer {
-            margin-top: 50px;
-            padding: 30px 20px;
-            background: linear-gradient(to bottom, #2c5aa0 0%, #1e3a70 100%);
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
             color: white;
-            text-align: center;
-            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
         }
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
+        
+        .status-observer {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1e3c72;
+            box-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+        }
+        
+        .decorative-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #1e3c72 20%, #c41e3a 50%, #ffd700 80%, transparent 100%);
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+        
+        .badge {
             display: inline-block;
-            margin: 10px;
-            transition: background-color 0.3s;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0.2rem;
         }
+        
+        .badge-blue {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            box-shadow: 0 2px 4px rgba(30, 60, 114, 0.3);
+        }
+        
+        .badge-red {
+            background: linear-gradient(135deg, #c41e3a 0%, #e63946 100%);
+            color: white;
+            box-shadow: 0 2px 4px rgba(196, 30, 58, 0.3);
+        }
+        
+        .badge-gold {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1e3c72;
+            box-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+        }
+        
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 4rem;
+            font-weight: 700;
+            color: rgba(30, 60, 114, 0.03);
+            pointer-events: none;
+            white-space: nowrap;
+            z-index: 0;
+        }
+        
+        .corner-decoration {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            opacity: 0.1;
+        }
+        
+        .corner-decoration.top-left {
+            top: 0;
+            left: 0;
+            border-top: 3px solid #1e3c72;
+            border-left: 3px solid #1e3c72;
+        }
+        
+        .corner-decoration.top-right {
+            top: 0;
+            right: 0;
+            border-top: 3px solid #c41e3a;
+            border-right: 3px solid #c41e3a;
+        }
+        
+        .corner-decoration.bottom-left {
+            bottom: 0;
+            left: 0;
+            border-bottom: 3px solid #ffd700;
+            border-left: 3px solid #ffd700;
+        }
+        
+        .corner-decoration.bottom-right {
+            bottom: 0;
+            right: 0;
+            border-bottom: 3px solid #1e3c72;
+            border-right: 3px solid #1e3c72;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #1e3c72 0%, #c41e3a 50%, #1e3c72 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 4px solid #ffd700;
+        }
+        
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+            border-radius: 4px;
+        }
+        
         footer a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 215, 0, 0.1);
+            color: #ffed4e;
         }
-        .footer-divider {
-            margin: 20px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 2rem;
+            margin-top: 2rem;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
         }
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        @keyframes shimmer {
+            to {
+                background-position: 200% center;
+            }
+        }
+        
+        @keyframes spin-slow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .animate-fadeInDown {
+            animation: fadeInDown 0.8s ease-out;
+        }
+        
+        .animate-scaleIn {
+            animation: scaleIn 0.6s ease-out;
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .text-shimmer {
+            background: linear-gradient(90deg, #1e3c72 0%, #ffd700 50%, #c41e3a 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s linear infinite;
+        }
+        
+        .animate-spin-slow {
+            animation: spin-slow 20s linear infinite;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .header-emblem {
+                width: 50px;
+            }
+            
+            .header-flag {
+                width: 70px;
+            }
+            
+            .coat-of-arms {
+                width: 50px;
+                height: 50px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            nav a {
+                padding: 0.8rem 1rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
             .section h2 {
-                font-size: 1.5em;
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -184,119 +619,173 @@
     </div>
 
     <div class="container">
-        <div class="header">
-            <img src="Images/coat2.png" alt="Government Emblem" class="header-emblem">
-            <img src="Images/Theflag.png" alt="National Flag" class="header-flag">
-            <h1>International Relations</h1>
-            <h2>Democratic Republic of Pigeonaria</h2>
+        <div class="top-banner animate-fadeInDown">
+            Ministry of Foreign Affairs - International Relations
         </div>
-
-        <div class="section">
-            <h2>🌍 Foreign Policy Principles</h2>
-            <p>The Democratic Republic of Pigeonaria conducts its foreign relations based on constitutional principles of neutrality, peaceful cooperation, and respect for international law. Our foreign policy reflects our commitment to democracy, human rights, and multilateral diplomacy.</p>
-            
-            <ul class="principles-list">
-                <li><strong>Neutrality:</strong> We maintain neutrality in international conflicts while supporting peaceful resolution of disputes. Changes to our neutral stance require public consultation through referendum.</li>
-                <li><strong>Democratic Values:</strong> We engage with nations that respect democratic governance, rule of law, and human rights.</li>
-                <li><strong>Multilateralism:</strong> We believe in international cooperation through established organizations and treaties.</li>
-                <li><strong>Peaceful Diplomacy:</strong> We resolve disagreements through dialogue, negotiation, and international law.</li>
-                <li><strong>Non-Intervention:</strong> We respect the sovereignty and internal affairs of other nations.</li>
-                <li><strong>Treaty Compliance:</strong> We honor all international agreements and expect the same from our partners.</li>
+        
+        <header>
+            <div class="header-top">
+                <img src="Images/coat2.png" alt="Government Emblem" class="header-emblem animate-scaleIn">
+                <div class="header-center">
+                    <img src="Images/3stars.png" alt="Three Stars" class="coat-of-arms animate-pulse">
+                    <h1 class="text-shimmer">International Relations</h1>
+                    <p class="subtitle">Democratic Republic of Pigeonaria</p>
+                </div>
+                <img src="Images/Theflag.png" alt="National Flag" class="header-flag animate-scaleIn">
+            </div>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="constitution.html">Constitution</a></li>
+                <li><a href="how the council of wings works.html">Council of Wings</a></li>
             </ul>
-        </div>
+        </nav>
+        
+        <main>
+            <section class="hero">
+                <div class="corner-decoration top-left animate-fadeInLeft"></div>
+                <div class="corner-decoration top-right animate-fadeInRight"></div>
+                <div class="watermark animate-spin-slow">DIPLOMACY</div>
+                <h2 class="animate-fadeInDown">Neutral, Peaceful, Democratic</h2>
+                <div class="decorative-line animate-scaleIn"></div>
+                <p class="animate-fadeInUp">The Democratic Republic of Pigeonaria conducts its foreign relations based on constitutional principles of neutrality, peaceful cooperation, and respect for international law. Our foreign policy reflects our commitment to democracy, human rights, and multilateral diplomacy.</p>
+                <div style="margin-top: 2rem;" class="animate-fadeInUp">
+                    <span class="badge badge-blue">Neutral</span>
+                    <span class="badge badge-red">Peaceful</span>
+                    <span class="badge badge-gold">Democratic</span>
+                </div>
+                <div class="corner-decoration bottom-left animate-fadeInLeft"></div>
+                <div class="corner-decoration bottom-right animate-fadeInRight"></div>
+            </section>
+            
+            <section class="section">
+                <div class="content-wrapper">
+                    <h2 class="animate-fadeInDown">🌍 Foreign Policy Principles</h2>
+                    
+                    <ul class="principles-list">
+                        <li class="animate-fadeInUp"><strong>Neutrality:</strong> We maintain neutrality in international conflicts while supporting peaceful resolution of disputes. Changes to our neutral stance require public consultation through referendum.</li>
+                        <li class="animate-fadeInUp"><strong>Democratic Values:</strong> We engage with nations that respect democratic governance, rule of law, and human rights.</li>
+                        <li class="animate-fadeInUp"><strong>Multilateralism:</strong> We believe in international cooperation through established organizations and treaties.</li>
+                        <li class="animate-fadeInUp"><strong>Peaceful Diplomacy:</strong> We resolve disagreements through dialogue, negotiation, and international law.</li>
+                        <li class="animate-fadeInUp"><strong>Non-Intervention:</strong> We respect the sovereignty and internal affairs of other nations.</li>
+                        <li class="animate-fadeInUp"><strong>Treaty Compliance:</strong> We honor all international agreements and expect the same from our partners.</li>
+                    </ul>
+                </div>
+            </section>
 
-        <div class="section">
-            <h2>🤝 International Memberships</h2>
-            
-            <div class="organization-card">
-                <h4>League of Servers <span class="status-badge status-observer">Application Pending</span></h4>
-                <p><strong>Referendum Result:</strong> February 2026 (83% in favor)</p>
-                <p><strong>Status:</strong> Application to be submitted</p>
-                <p>The Democratic Republic of Pigeonaria held a national referendum in February 2026 on joining the League of Servers, where 83% of voters supported membership. Following this strong public mandate, the government will submit a formal application as soon as possible. The League of Servers promotes cooperation, shared values, and mutual support among democratic server communities.</p>
-            </div>
-        </div>
+            <section class="section">
+                <div class="content-wrapper">
+                    <h2 class="animate-fadeInDown">🤝 International Memberships</h2>
+                    
+                    <div class="organization-card animate-fadeInUp">
+                        <h4>League of Servers <span class="status-badge status-observer">Application Pending</span></h4>
+                        <p><strong>Referendum Result:</strong> February 2026 (83% in favor)</p>
+                        <p><strong>Status:</strong> Application to be submitted</p>
+                        <p>The Democratic Republic of Pigeonaria held a national referendum in February 2026 on joining the League of Servers, where 83% of voters supported membership. Following this strong public mandate, the government will submit a formal application as soon as possible. The League of Servers promotes cooperation, shared values, and mutual support among democratic server communities.</p>
+                    </div>
+                </div>
+            </section>
 
-        <div class="section">
-            <h2>🏛️ Diplomatic Relations</h2>
-            <h3>Ministry of Foreign Affairs</h3>
-            <p><strong>Minister:</strong> elonmusk2923</p>
-            <p>The Ministry of Foreign Affairs manages all diplomatic relations, treaty negotiations, and international representation. Our diplomatic corps operates with transparency and accountability to the Council of Wings.</p>
-            
-            <h3>Diplomatic Contact</h3>
-            <p>For diplomatic inquiries, treaty proposals, or international cooperation:</p>
-            <p><strong>Discord:</strong> loli292</p>
-            <p><strong>Official Server:</strong> <a href="https://discord.gg/nAuAw9UF" style="color: #2c5aa0;">https://discord.gg/nAuAw9UF</a></p>
-        </div>
+            <section class="section">
+                <div class="content-wrapper">
+                    <h2 class="animate-fadeInDown">🏛️ Diplomatic Relations</h2>
+                    
+                    <div class="organization-card animate-fadeInUp">
+                        <h3>Ministry of Foreign Affairs</h3>
+                        <p><strong>Minister:</strong> elonmusk2923</p>
+                        <p>The Ministry of Foreign Affairs manages all diplomatic relations, treaty negotiations, and international representation. Our diplomatic corps operates with transparency and accountability to the Council of Wings.</p>
+                    </div>
+                    
+                    <div class="organization-card animate-fadeInUp">
+                        <h3>Diplomatic Contact</h3>
+                        <p>For diplomatic inquiries, treaty proposals, or international cooperation:</p>
+                        <p><strong>Discord:</strong> loli292</p>
+                        <p><strong>Official Server:</strong> <a href="https://discord.gg/9NE3rVhB" style="color: #1e3c72; font-weight: 600;">https://discord.gg/9NE3rVhB</a></p>
+                    </div>
+                </div>
+            </section>
 
-        <div class="section">
-            <h2>📜 Treaty Framework</h2>
-            <p>All international treaties must comply with our Constitution and receive approval from the Council of Wings. Treaties that conflict with our current neutrality stance or democratic principles require additional public consultation.</p>
-            
-            <h3>Treaty Requirements</h3>
-            <ul class="principles-list">
-                <li>Must respect Pigeonarian sovereignty and constitutional principles</li>
-                <li>Military alliances or commitments that alter our neutrality require referendum approval</li>
-                <li>Must be approved by Council of Wings majority vote</li>
-                <li>Subject to Constitutional Court review for compliance</li>
-                <li>Can be terminated if they violate our constitutional principles</li>
-            </ul>
-            
-            <h3>Changing Our Neutral Stance</h3>
-            <p>While Pigeonaria currently maintains neutrality, this is not a permanent, unchangeable position. Any significant shift in our foreign policy stance—such as joining military alliances or abandoning neutrality—requires:</p>
-            <ul class="principles-list">
-                <li>A national referendum to gauge public opinion</li>
-                <li>Approval by the Council of Wings</li>
-                <li>Demonstrated shift in public sentiment supporting the change</li>
-                <li>Full transparency about the implications and commitments involved</li>
-            </ul>
-            <p>This ensures that major foreign policy decisions reflect the will of the Pigeonarian people, not just the government of the day.</p>
-        </div>
+            <section class="section">
+                <div class="content-wrapper">
+                    <h2 class="animate-fadeInDown">📜 Treaty Framework</h2>
+                    
+                    <div class="organization-card animate-fadeInUp">
+                        <p>All international treaties must comply with our Constitution and receive approval from the Council of Wings. Treaties that conflict with our current neutrality stance or democratic principles require additional public consultation.</p>
+                        
+                        <h4 style="margin-top: 1.5rem;">Treaty Requirements</h4>
+                        <ul class="principles-list" style="margin-top: 1rem;">
+                            <li>Must respect Pigeonarian sovereignty and constitutional principles</li>
+                            <li>Military alliances or commitments that alter our neutrality require referendum approval</li>
+                            <li>Must be approved by Council of Wings majority vote</li>
+                            <li>Subject to Constitutional Court review for compliance</li>
+                            <li>Can be terminated if they violate our constitutional principles</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="organization-card animate-fadeInUp">
+                        <h3>Changing Our Neutral Stance</h3>
+                        <p>While Pigeonaria currently maintains neutrality, this is not a permanent, unchangeable position. Any significant shift in our foreign policy stance—such as joining military alliances or abandoning neutrality—requires:</p>
+                        <ul class="principles-list" style="margin-top: 1rem;">
+                            <li>A national referendum to gauge public opinion</li>
+                            <li>Approval by the Council of Wings</li>
+                            <li>Demonstrated shift in public sentiment supporting the change</li>
+                            <li>Full transparency about the implications and commitments involved</li>
+                        </ul>
+                        <p style="margin-top: 1rem;">This ensures that major foreign policy decisions reflect the will of the Pigeonarian people, not just the government of the day.</p>
+                    </div>
+                </div>
+            </section>
 
-        <div class="section">
-            <h2>🌐 Areas of International Cooperation</h2>
-            <p>Pigeonaria actively seeks cooperation in areas that advance peace, prosperity, and democratic values:</p>
-            
-            <div class="organization-card">
-                <h4>🌱 Environmental Protection</h4>
-                <p>Collaboration on climate action, biodiversity conservation, and sustainable development.</p>
-            </div>
-            
-            <div class="organization-card">
-                <h4>📚 Cultural Exchange</h4>
-                <p>Promoting mutual understanding through educational programs, arts, and cultural diplomacy.</p>
-            </div>
-            
-            <div class="organization-card">
-                <h4>💻 Digital Cooperation</h4>
-                <p>Partnerships in cybersecurity, digital rights, and technology governance.</p>
-            </div>
-            
-            <div class="organization-card">
-                <h4>⚖️ Rule of Law</h4>
-                <p>Supporting international legal frameworks, human rights, and democratic institutions.</p>
-            </div>
-        </div>
+            <section class="section">
+                <div class="content-wrapper">
+                    <h2 class="animate-fadeInDown">🌐 Areas of International Cooperation</h2>
+                    <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #5a6c7d;">Pigeonaria actively seeks cooperation in areas that advance peace, prosperity, and democratic values:</p>
+                    
+                    <div class="organization-card animate-fadeInUp">
+                        <h4>🌱 Environmental Protection</h4>
+                        <p>Collaboration on climate action, biodiversity conservation, and sustainable development.</p>
+                    </div>
+                    
+                    <div class="organization-card animate-fadeInUp">
+                        <h4>📚 Cultural Exchange</h4>
+                        <p>Promoting mutual understanding through educational programs, arts, and cultural diplomacy.</p>
+                    </div>
+                    
+                    <div class="organization-card animate-fadeInUp">
+                        <h4>💻 Digital Cooperation</h4>
+                        <p>Partnerships in cybersecurity, digital rights, and technology governance.</p>
+                    </div>
+                    
+                    <div class="organization-card animate-fadeInUp">
+                        <h4>⚖️ Rule of Law</h4>
+                        <p>Supporting international legal frameworks, human rights, and democratic institutions.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
 
         <footer>
             <a href="index.html">← Return to Government Portal</a>
-            <div class="footer-divider"></div>
-            <p>&copy; 2026 The Democratic Republic of Pigeonaria. All rights reserved.</p>
-            <p>Capital: Featherhold | Currency: Pigeonarian Ducat (ⱣD)</p>
+            <div class="copyright">
+                <p>&copy; 2026 The Democratic Republic of Pigeonaria. All rights reserved.</p>
+                <p>Capital: Featherhold | Currency: Pigeonarian Ducat (ⱣD) | A nation of reason, neutrality, and freedom.</p>
+            </div>
         </footer>
     </div>
-</body>
-</html>
-
 
     <!-- Back to Top Button -->
     <button id="backToTop" onclick="scrollToTop()" style="display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; background-color: transparent; border: none; width: 50px; height: 50px; cursor: pointer; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
         <img src="Images/arrow1.png" alt="Back to Top" style="width: 100%; height: 100%; object-fit: contain;">
     </button>
 
+    <!-- External JavaScript -->
     <script src="js/mobile.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/search.js"></script>
     <script src="js/settings.js"></script>
     <script src="js/sounds.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
