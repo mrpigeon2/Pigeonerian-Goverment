@@ -99,7 +99,30 @@
             color: #ffd700;
             text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
             margin-bottom: 1rem;
-            animation: glow 2s ease-in-out infinite;
+            animation: glow 2s ease-in-out infinite, glitch 5s ease-in-out infinite;
+            position: relative;
+        }
+        
+        .error-code:before,
+        .error-code:after {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .error-code:before {
+            animation: glitch-before 3s infinite;
+            color: #c41e3a;
+            z-index: -1;
+        }
+        
+        .error-code:after {
+            animation: glitch-after 3s infinite;
+            color: #1e3c72;
+            z-index: -2;
         }
         
         @keyframes glow {
@@ -108,6 +131,63 @@
             }
             50% {
                 text-shadow: 0 0 40px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 215, 0, 0.6);
+            }
+        }
+        
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+                text-shadow: 2px 0 #1e3c72, -2px 0 #c41e3a;
+            }
+            40% {
+                transform: translate(-2px, -2px);
+                text-shadow: -2px 0 #c41e3a, 2px 0 #1e3c72;
+            }
+            60% {
+                transform: translate(2px, 2px);
+                text-shadow: 2px 0 #ffd700, -2px 0 #1e3c72;
+            }
+            80% {
+                transform: translate(2px, -2px);
+                text-shadow: -2px 0 #1e3c72, 2px 0 #c41e3a;
+            }
+            100% {
+                transform: translate(0);
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            }
+        }
+        
+        @keyframes glitch-before {
+            0%, 100% {
+                transform: translate(0);
+                opacity: 0;
+            }
+            10% {
+                transform: translate(-5px, -5px);
+                opacity: 0.7;
+            }
+            20% {
+                transform: translate(5px, 5px);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes glitch-after {
+            0%, 100% {
+                transform: translate(0);
+                opacity: 0;
+            }
+            15% {
+                transform: translate(5px, -5px);
+                opacity: 0.7;
+            }
+            25% {
+                transform: translate(-5px, 5px);
+                opacity: 0;
             }
         }
         
@@ -289,7 +369,7 @@
         
         <p>The page you are looking for does not exist in the Democratic Republic of Pigeonaria's official government portal.</p>
         
-        <a href="index.html" class="btn-home">🏠 Return to Government Portal</a>
+        <a href="https://mrpigeon2.github.io/Pigeonerian-Goverment/" class="btn-home">🏠 Return to Government Portal</a>
         
         <p class="motto">"Liberty through Law, Order through Consensus"</p>
     </div>
@@ -297,7 +377,7 @@
     <script>
         // Auto-redirect after 10 seconds
         setTimeout(function() {
-            window.location.href = 'index.html';
+            window.location.href = 'https://mrpigeon2.github.io/Pigeonerian-Goverment/';
         }, 10000);
         
         // Add sound effect on button click if sounds.js is available
