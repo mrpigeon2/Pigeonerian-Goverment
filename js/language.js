@@ -20,7 +20,7 @@ const languages = {
 
 // Check if site is hosted (not file://)
 function isHosted() {
-    return window.location.protocol !== 'file:';
+    return window.location.protocol === 'http:' || window.location.protocol === 'https:';
 }
 
 // Initialize language on page load
