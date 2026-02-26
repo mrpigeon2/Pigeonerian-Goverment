@@ -180,6 +180,114 @@ function triggerNATOAnimation() {
         fill: 'forwards'
     });
     
+    // Create NATO map on the right side
+    const natoMap = document.createElement('img');
+    natoMap.src = 'Images/natomap.png';
+    natoMap.style.cssText = `
+        position: absolute;
+        right: 2%;
+        top: 50%;
+        transform: translateY(-50%) scale(0);
+        max-width: 25%;
+        max-height: 80%;
+        height: auto;
+        filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));
+        opacity: 0;
+        z-index: 9998;
+    `;
+    container.appendChild(natoMap);
+    
+    // Animate NATO map appearing
+    setTimeout(() => {
+        natoMap.animate([
+            { transform: 'translateY(-50%) scale(0) rotate(-10deg)', opacity: 0 },
+            { transform: 'translateY(-50%) scale(1.1) rotate(0deg)', opacity: 1, offset: 0.7 },
+            { transform: 'translateY(-50%) scale(1) rotate(0deg)', opacity: 0.9 }
+        ], {
+            duration: 1500,
+            easing: 'ease-out',
+            fill: 'forwards'
+        });
+        
+        // Add subtle pulse to map
+        setTimeout(() => {
+            natoMap.animate([
+                { transform: 'translateY(-50%) scale(1)', opacity: 0.9 },
+                { transform: 'translateY(-50%) scale(1.02)', opacity: 1 },
+                { transform: 'translateY(-50%) scale(1)', opacity: 0.9 }
+            ], {
+                duration: 4000,
+                easing: 'ease-in-out',
+                iterations: Infinity
+            });
+        }, 1500);
+    }, 3000);
+    
+    // Create timeline at bottom
+    const timeline = document.createElement('div');
+    timeline.style.cssText = `
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        width: 80%;
+        max-width: 900px;
+        background: linear-gradient(135deg, rgba(0,61,165,0.95) 0%, rgba(0,40,104,0.95) 100%);
+        padding: 25px 40px;
+        border-radius: 15px;
+        border: 3px solid white;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+        z-index: 10001;
+        opacity: 0;
+    `;
+    timeline.innerHTML = `
+        <div style="text-align: center; color: white; font-family: Arial, sans-serif;">
+            <div style="font-size: 28px; font-weight: bold; margin-bottom: 15px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+                NATO Timeline
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <div style="font-size: 36px; font-weight: bold; color: #ffd700;">1949</div>
+                <div style="flex: 1; height: 6px; background: linear-gradient(90deg, #ffd700 0%, white 50%, #4CAF50 100%); margin: 0 20px; border-radius: 3px; position: relative;">
+                    <div style="position: absolute; right: 0; top: -25px; background: #4CAF50; color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.3); animation: pulse-new 2s ease-in-out infinite;">
+                        NEW! 🇸🇪 🇫🇮
+                    </div>
+                </div>
+                <div style="font-size: 36px; font-weight: bold; color: #4CAF50;">2026</div>
+            </div>
+            <div style="font-size: 16px; opacity: 0.95; margin-top: 10px;">
+                <span style="color: #ffd700;">12 Founding Members</span>
+                <span style="margin: 0 15px; color: white;">→</span>
+                <span style="color: white;">32 Members Today</span>
+                <span style="margin: 0 15px; color: white;">•</span>
+                <span style="color: #4CAF50; font-weight: bold;">Sweden & Finland Joined 2023-2024</span>
+            </div>
+        </div>
+    `;
+    container.appendChild(timeline);
+    
+    // Add pulse animation for "NEW" badge
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes pulse-new {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Animate timeline appearing
+    setTimeout(() => {
+        timeline.animate([
+            { transform: 'translateX(-50%) scale(0) translateY(50px)', opacity: 0 },
+            { transform: 'translateX(-50%) scale(1.05) translateY(0px)', opacity: 1, offset: 0.7 },
+            { transform: 'translateX(-50%) scale(1) translateY(0px)', opacity: 1 }
+        ], {
+            duration: 1000,
+            easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+            fill: 'forwards'
+        });
+    }, 4000);
+    
     // Create 32 NATO member flags in a circle formation
     const numFlags = 32;
     const radius = Math.min(window.innerWidth, window.innerHeight) * 0.48; // Increased to 0.48 for more space
@@ -225,58 +333,132 @@ function createNATOFlag(container, index, total, radius, centerX, centerY) {
     
     container.appendChild(flag);
     
-    // Animate flag flying out to position
+    // Animate flag flying out to position with more dynamic movement
     flag.animate([
         { 
             left: `${centerX}px`,
             top: `${centerY}px`,
             transform: 'translate(-50%, -50%) scale(0) rotate(0deg)',
-            opacity: 0
+            opacity: 0,
+            filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.3)) blur(5px)'
+        },
+        { 
+            left: `${centerX + Math.cos(angle) * radius * 0.5}px`,
+            top: `${centerY + Math.sin(angle) * radius * 0.5}px`,
+            transform: 'translate(-50%, -50%) scale(0.8) rotate(180deg)',
+            opacity: 0.5,
+            filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.3)) blur(2px)',
+            offset: 0.4
         },
         { 
             left: `${x}px`,
             top: `${y}px`,
-            transform: 'translate(-50%, -50%) scale(1.2) rotate(360deg)',
+            transform: 'translate(-50%, -50%) scale(1.3) rotate(360deg)',
             opacity: 1,
-            offset: 0.7
+            filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.3)) blur(0px)',
+            offset: 0.8
         },
         { 
             left: `${x}px`,
             top: `${y}px`,
             transform: 'translate(-50%, -50%) scale(1) rotate(360deg)',
-            opacity: 1
+            opacity: 1,
+            filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.3)) blur(0px)'
         }
     ], {
-        duration: 1500,
-        easing: 'ease-out',
+        duration: 2000,
+        easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)', // Bouncy easing
         fill: 'forwards'
     });
     
-    // Add gentle floating animation
+    // Add wave effect (like flag waving in wind)
     setTimeout(() => {
         flag.animate([
-            { transform: 'translate(-50%, -50%) scale(1) translateY(0px)' },
-            { transform: 'translate(-50%, -50%) scale(1) translateY(-10px)' },
-            { transform: 'translate(-50%, -50%) scale(1) translateY(0px)' }
+            { 
+                transform: 'translate(-50%, -50%) scale(1) perspective(400px) rotateY(0deg)',
+                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.3)) brightness(1)'
+            },
+            { 
+                transform: 'translate(-50%, -50%) scale(1) perspective(400px) rotateY(15deg)',
+                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.3)) brightness(1.1)',
+                offset: 0.25
+            },
+            { 
+                transform: 'translate(-50%, -50%) scale(1) perspective(400px) rotateY(0deg)',
+                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.3)) brightness(1)',
+                offset: 0.5
+            },
+            { 
+                transform: 'translate(-50%, -50%) scale(1) perspective(400px) rotateY(-15deg)',
+                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.3)) brightness(1.1)',
+                offset: 0.75
+            },
+            { 
+                transform: 'translate(-50%, -50%) scale(1) perspective(400px) rotateY(0deg)',
+                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.3)) brightness(1)'
+            }
         ], {
             duration: 3000,
             easing: 'ease-in-out',
             iterations: Infinity
         });
-    }, 1500);
+    }, 2000);
     
-    // Pulse effect on flag
+    // Add floating animation with slight rotation
     setTimeout(() => {
         flag.animate([
-            { filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.3)) brightness(1)' },
-            { filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.3)) brightness(1.3)' },
-            { filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.3)) brightness(1)' }
+            { 
+                transform: 'translate(-50%, -50%) scale(1) translateY(0px) rotate(0deg)'
+            },
+            { 
+                transform: 'translate(-50%, -50%) scale(1.05) translateY(-15px) rotate(2deg)',
+                offset: 0.5
+            },
+            { 
+                transform: 'translate(-50%, -50%) scale(1) translateY(0px) rotate(0deg)'
+            }
         ], {
-            duration: 2000,
+            duration: 4000 + (index * 100), // Staggered timing for wave effect
             easing: 'ease-in-out',
             iterations: Infinity
         });
-    }, 1500 + index * 100);
+    }, 2000);
+    
+    // Add pulsing glow effect (NATO blue)
+    setTimeout(() => {
+        flag.animate([
+            { 
+                boxShadow: '0 0 20px rgba(255,255,255,0.5)',
+                borderColor: 'white'
+            },
+            { 
+                boxShadow: '0 0 40px rgba(0,61,165,0.9), 0 0 60px rgba(0,61,165,0.5)',
+                borderColor: '#003da5',
+                offset: 0.5
+            },
+            { 
+                boxShadow: '0 0 20px rgba(255,255,255,0.5)',
+                borderColor: 'white'
+            }
+        ], {
+            duration: 3000 + (index * 50),
+            easing: 'ease-in-out',
+            iterations: Infinity
+        });
+    }, 2000 + index * 100);
+    
+    // Add occasional "salute" animation (flag tilts forward)
+    setInterval(() => {
+        flag.animate([
+            { transform: 'translate(-50%, -50%) scale(1) perspective(400px) rotateX(0deg)' },
+            { transform: 'translate(-50%, -50%) scale(1.1) perspective(400px) rotateX(20deg)', offset: 0.3 },
+            { transform: 'translate(-50%, -50%) scale(1.1) perspective(400px) rotateX(20deg)', offset: 0.7 },
+            { transform: 'translate(-50%, -50%) scale(1) perspective(400px) rotateX(0deg)' }
+        ], {
+            duration: 1500,
+            easing: 'ease-in-out'
+        });
+    }, 10000 + (index * 300)); // Each flag salutes at different times
 }
 
 // Pigeon animation Easter egg
