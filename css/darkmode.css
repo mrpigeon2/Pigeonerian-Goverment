@@ -16,11 +16,106 @@
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     transition: background-color 0.3s, transform 0.2s;
+    background-image: url('../Images/gear.png');
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #settingsButton:hover {
     background-color: #1e3a70;
     transform: scale(1.1);
+}
+
+/* Language Button */
+#languageButton {
+    position: fixed;
+    top: 20px;
+    right: 80px;
+    z-index: 1000;
+    background-color: #2c5aa0;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#languageButton:hover {
+    background-color: #1e3a70;
+    transform: scale(1.1);
+}
+
+/* Language Panel */
+#languagePanel {
+    position: fixed;
+    top: 80px;
+    right: 80px;
+    z-index: 999;
+    background: white;
+    border: 2px solid #2c5aa0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: none;
+    min-width: 200px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+#languagePanel h3 {
+    margin: 0 0 15px 0;
+    color: #2c5aa0;
+    font-size: 1.2em;
+}
+
+#languagePanel button {
+    width: 100%;
+    padding: 8px 12px;
+    margin: 4px 0;
+    background-color: #2c5aa0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background-color 0.3s;
+    text-align: left;
+}
+
+#languagePanel button:hover {
+    background-color: #1e3a70;
+}
+
+#languagePanel button.active {
+    background-color: #ffd700;
+    color: #1e3c72;
+    font-weight: bold;
+}
+
+/* Hide Google Translate default widget */
+#google_translate_element {
+    display: none !important;
+}
+
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+.goog-te-balloon-frame {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+.skiptranslate {
+    display: none !important;
 }
 
 /* Settings Panel */
@@ -181,7 +276,7 @@ body, .container, .section, .card, .ministry-card, .party-card {
 #searchButton {
     position: fixed;
     top: 20px;
-    right: 80px;
+    right: 140px;
     z-index: 1000;
     background-color: #2c5aa0;
     color: white;
@@ -193,6 +288,10 @@ body, .container, .section, .card, .ministry-card, .party-card {
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     transition: background-color 0.3s, transform 0.2s;
+    background-image: url('../Images/search.png');
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #searchButton:hover {
@@ -203,7 +302,7 @@ body, .container, .section, .card, .ministry-card, .party-card {
 #searchPanel {
     position: fixed;
     top: 80px;
-    right: 80px;
+    right: 140px;
     z-index: 999;
     background: white;
     border: 2px solid #2c5aa0;
