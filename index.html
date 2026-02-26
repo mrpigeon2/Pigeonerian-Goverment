@@ -1143,6 +1143,329 @@
             color: #721c24;
         }
         
+        /* Sick Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-180deg) scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 5px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.5);
+            }
+        }
+        
+        @keyframes wave {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes wiggle {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(-5deg);
+            }
+            75% {
+                transform: rotate(5deg);
+            }
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            10%, 30% {
+                transform: scale(0.9);
+            }
+            20%, 40% {
+                transform: scale(1.1);
+            }
+        }
+        
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* Apply animations to elements */
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .animate-fadeInDown {
+            animation: fadeInDown 0.8s ease-out;
+        }
+        
+        .animate-fadeInLeft {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+        
+        .animate-fadeInRight {
+            animation: fadeInRight 0.8s ease-out;
+        }
+        
+        .animate-scaleIn {
+            animation: scaleIn 0.6s ease-out;
+        }
+        
+        .animate-bounceIn {
+            animation: bounceIn 0.8s ease-out;
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .animate-glow {
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        .animate-wave {
+            animation: wave 2s ease-in-out infinite;
+        }
+        
+        .animate-wiggle {
+            animation: wiggle 1s ease-in-out infinite;
+        }
+        
+        .animate-heartbeat {
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+        
+        .animate-spin-slow {
+            animation: spin 20s linear infinite;
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hover-glow:hover {
+            animation: glow 1s ease-in-out infinite;
+        }
+        
+        .hover-shake:hover {
+            animation: wiggle 0.5s ease-in-out;
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
+        
+        /* Parallax effect */
+        .parallax-slow {
+            transition: transform 0.5s ease-out;
+        }
+        
+        /* Gradient animation */
+        .gradient-animate {
+            background-size: 200% 200%;
+            animation: gradient-shift 5s ease infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Text shimmer */
+        .text-shimmer {
+            background: linear-gradient(90deg, #1e3c72 0%, #ffd700 50%, #c41e3a 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            to {
+                background-position: 200% center;
+            }
+        }
+        
+        /* Particle effect */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: particle-float 10s infinite;
+        }
+        
+        @keyframes particle-float {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+        
         nav {
             background: linear-gradient(90deg, #1e3c72 0%, #c41e3a 50%, #1e3c72 100%);
             padding: 0;
@@ -1633,101 +1956,101 @@
         
         <main>
             <section class="hero">
-                <div class="corner-decoration top-left"></div>
-                <div class="corner-decoration top-right"></div>
-                <div class="watermark">OFFICIAL</div>
-                <h2>Welcome to the Official Government Portal</h2>
-                <div class="decorative-line"></div>
-                <p>The Democratic Republic of Pigeonaria is a sovereign constitutional parliamentary republic founded upon the principle that all public power proceeds from the people. We are committed to transparency, democracy, and the rule of law.</p>
-                <div style="margin-top: 2rem;">
-                    <span class="badge badge-blue">Est. 2026</span>
-                    <span class="badge badge-red">Democratic</span>
-                    <span class="badge badge-gold">Transparent</span>
-                    <span class="badge badge-blue">Neutral</span>
+                <div class="corner-decoration top-left animate-fadeInLeft"></div>
+                <div class="corner-decoration top-right animate-fadeInRight"></div>
+                <div class="watermark animate-spin-slow">OFFICIAL</div>
+                <h2 class="animate-fadeInDown text-shimmer">Welcome to the Official Government Portal</h2>
+                <div class="decorative-line animate-scaleIn"></div>
+                <p class="animate-fadeInUp">The Democratic Republic of Pigeonaria is a sovereign constitutional parliamentary republic founded upon the principle that all public power proceeds from the people. We are committed to transparency, democracy, and the rule of law.</p>
+                <div style="margin-top: 2rem;" class="animate-bounceIn">
+                    <span class="badge badge-blue animate-wave stagger-1">Est. 2026</span>
+                    <span class="badge badge-red animate-wave stagger-2">Democratic</span>
+                    <span class="badge badge-gold animate-wave stagger-3">Transparent</span>
+                    <span class="badge badge-blue animate-wave stagger-4">Neutral</span>
                 </div>
-                <div class="corner-decoration bottom-left"></div>
-                <div class="corner-decoration bottom-right"></div>
+                <div class="corner-decoration bottom-left animate-fadeInLeft"></div>
+                <div class="corner-decoration bottom-right animate-fadeInRight"></div>
             </section>
             
             <section class="grid">
-                <div class="card shine-effect">
+                <div class="card shine-effect hover-lift animate-fadeInUp stagger-1">
                     <div class="card-accent"></div>
-                    <div class="floating-badge">Legislative</div>
+                    <div class="floating-badge animate-pulse">Legislative</div>
                     <h3>Council of Wings</h3>
                     <p>Our national legislature and supreme decision-making body represents the people and enacts all laws, budgets, and policies. The Council ensures proportional representation and democratic governance through open debate and recorded votes.</p>
                 </div>
                 
-                <div class="card shine-effect">
+                <div class="card shine-effect hover-lift animate-fadeInUp stagger-2">
                     <div class="card-accent"></div>
-                    <div class="floating-badge">Executive</div>
+                    <div class="floating-badge animate-pulse">Executive</div>
                     <h3>Prime Minister's Office</h3>
                     <p>The Head of Government presides over the executive branch and maintains the confidence of the Council of Wings. The government acts collectively through the Cabinet of Ministers across seven key ministries.</p>
                 </div>
                 
-                <div class="card shine-effect">
+                <div class="card shine-effect hover-lift animate-fadeInUp stagger-3">
                     <div class="card-accent"></div>
-                    <div class="floating-badge">Judicial</div>
+                    <div class="floating-badge animate-pulse">Judicial</div>
                     <h3>Independent Judiciary</h3>
                     <p>Our courts administer justice in accordance with law, with judges appointed for life. The Supreme Court handles civil and criminal matters, while the Constitutional Court safeguards our fundamental law.</p>
                 </div>
                 
-                <div class="card shine-effect">
+                <div class="card shine-effect hover-lift animate-fadeInUp stagger-4">
                     <div class="card-accent"></div>
-                    <div class="floating-badge">Oversight</div>
+                    <div class="floating-badge animate-pulse">Oversight</div>
                     <h3>Government Oversight</h3>
                     <p>The High Commissioner for Government Oversight, National Audit Office, and Ombudsman ensure no authority acts above the law, investigating corruption and defending individual rights.</p>
                 </div>
                 
-                <div class="card shine-effect">
+                <div class="card shine-effect hover-lift animate-fadeInUp stagger-5">
                     <div class="card-accent"></div>
-                    <div class="floating-badge">Services</div>
+                    <div class="floating-badge animate-pulse">Services</div>
                     <h3>Citizen Services</h3>
                     <p>Access voter registration, petition submissions, public document requests, and other essential services through our transparent and accessible digital platforms.</p>
                 </div>
                 
-                <div class="card shine-effect">
+                <div class="card shine-effect hover-lift animate-fadeInUp stagger-6">
                     <div class="card-accent"></div>
-                    <div class="floating-badge">Diplomatic</div>
+                    <div class="floating-badge animate-pulse">Diplomatic</div>
                     <h3>International Relations</h3>
                     <p>As a neutral state, Pigeonaria maintains diplomatic relations based on mutual respect, peace, and lawful cooperation while preserving our independence and constitutional values.</p>
                 </div>
             </section>
         </main>
         
-        <section class="stats">
-            <div class="watermark" style="font-size: 6rem;">PIGEONARIA</div>
-            <h2 class="glow-text">Republic at a Glance</h2>
-            <div class="divider-fancy"></div>
+        <section class="stats gradient-animate">
+            <div class="watermark animate-spin-slow" style="font-size: 6rem;">PIGEONARIA</div>
+            <h2 class="glow-text animate-fadeInDown">Republic at a Glance</h2>
+            <div class="divider-fancy animate-scaleIn"></div>
             <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="icon-circle">🏛️</div>
-                    <span class="stat-number">3</span>
+                <div class="stat-item animate-bounceIn stagger-1">
+                    <div class="icon-circle animate-pulse">🏛️</div>
+                    <span class="stat-number animate-heartbeat">3</span>
                     <span>Provinces</span>
                 </div>
-                <div class="stat-item">
-                    <div class="icon-circle">⚖️</div>
-                    <span class="stat-number">7</span>
+                <div class="stat-item animate-bounceIn stagger-2">
+                    <div class="icon-circle animate-pulse">⚖️</div>
+                    <span class="stat-number animate-heartbeat">7</span>
                     <span>Ministries</span>
                 </div>
-                <div class="stat-item">
-                    <div class="icon-circle">📅</div>
-                    <span class="stat-number">2026</span>
+                <div class="stat-item animate-bounceIn stagger-3">
+                    <div class="icon-circle animate-pulse">📅</div>
+                    <span class="stat-number animate-heartbeat">2026</span>
                     <span>Founded</span>
                 </div>
-                <div class="stat-item">
-                    <div class="icon-circle">✓</div>
-                    <span class="stat-number">100%</span>
+                <div class="stat-item animate-bounceIn stagger-4">
+                    <div class="icon-circle animate-pulse">✓</div>
+                    <span class="stat-number animate-heartbeat">100%</span>
                     <span>Transparency</span>
                 </div>
             </div>
         </section>
         
         <section class="news">
-            <h2>Government Gazette - Latest Updates</h2>
-            <div class="divider-fancy"></div>
+            <h2 class="animate-fadeInDown">Government Gazette - Latest Updates</h2>
+            <div class="divider-fancy animate-scaleIn"></div>
             
-            <div class="news-item shine-effect">
-                <div class="stamp">OFFICIAL<br>GAZETTE</div>
+            <div class="news-item shine-effect hover-lift animate-fadeInLeft stagger-1">
+                <div class="stamp animate-wiggle">OFFICIAL<br>GAZETTE</div>
                 <div class="news-date">February 22, 2026</div>
                 <h3>Council of Wings Convenes First Legislative Session</h3>
                 <p>The Council of Wings held its inaugural legislative session, establishing parliamentary procedures and committee structures. The session focused on foundational governance frameworks and preparation for future democratic elections.</p>
@@ -1737,8 +2060,8 @@
                 </div>
             </div>
             
-            <div class="news-item shine-effect">
-                <div class="stamp">OFFICIAL<br>GAZETTE</div>
+            <div class="news-item shine-effect hover-lift animate-fadeInLeft stagger-2">
+                <div class="stamp animate-wiggle">OFFICIAL<br>GAZETTE</div>
                 <div class="news-date">February 18, 2026</div>
                 <h3>Environmental Protection Framework Announced</h3>
                 <p>The Ministry of Environment unveils comprehensive biodiversity protection initiatives and renewable energy expansion programs, reinforcing our commitment to intergenerational responsibility and sustainable development.</p>
@@ -1748,8 +2071,8 @@
                 </div>
             </div>
             
-            <div class="news-item shine-effect">
-                <div class="stamp">OFFICIAL<br>GAZETTE</div>
+            <div class="news-item shine-effect hover-lift animate-fadeInLeft stagger-3">
+                <div class="stamp animate-wiggle">OFFICIAL<br>GAZETTE</div>
                 <div class="news-date">February 12, 2026</div>
                 <h3>Digital Rights and Privacy Protections Established</h3>
                 <p>Enhanced cybersecurity measures and digital privacy protections now in effect, ensuring citizen data security and transparent government technology use as the Republic builds its digital infrastructure.</p>
@@ -2260,15 +2583,15 @@
         
         <!-- Bottom Decorative Elements -->
         <div style="margin-top: 2.5rem; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
-            <div style="text-align: center;">
-                <div style="font-size: 2rem; margin-bottom: 0.5rem;">👥</div>
-                <div style="font-size: 0.85rem; color: #666; font-weight: 600;">Active Community</div>
+            <div style="text-align: center;" class="animate-fadeInUp stagger-1">
+                <div style="font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 700; color: #5865F2;">14</div>
+                <div style="font-size: 0.85rem; color: #666; font-weight: 600;">Members</div>
             </div>
-            <div style="text-align: center;">
+            <div style="text-align: center;" class="animate-fadeInUp stagger-2">
                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">📢</div>
                 <div style="font-size: 0.85rem; color: #666; font-weight: 600;">Latest Updates</div>
             </div>
-            <div style="text-align: center;">
+            <div style="text-align: center;" class="animate-fadeInUp stagger-3">
                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎉</div>
                 <div style="font-size: 0.85rem; color: #666; font-weight: 600;">Events & More</div>
             </div>
