@@ -27,97 +27,6 @@
     transform: scale(1.1);
 }
 
-/* Language Button */
-#languageButton {
-    position: fixed;
-    top: 20px;
-    right: 80px;
-    z-index: 1000;
-    background-color: #2c5aa0;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-#languageButton:hover {
-    background-color: #1e3a70;
-    transform: scale(1.1);
-}
-
-/* Language Panel */
-#languagePanel {
-    position: fixed;
-    top: 80px;
-    right: 80px;
-    z-index: 999;
-    background: white;
-    border: 2px solid #2c5aa0;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    display: none;
-    min-width: 200px;
-    max-height: 500px;
-    overflow-y: auto;
-}
-
-#languagePanel h3 {
-    margin: 0 0 15px 0;
-    color: #2c5aa0;
-    font-size: 1.2em;
-}
-
-#languagePanel button {
-    width: 100%;
-    padding: 8px 12px;
-    margin: 4px 0;
-    background-color: #2c5aa0;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.95em;
-    transition: background-color 0.3s;
-    text-align: left;
-}
-
-#languagePanel button:hover {
-    background-color: #1e3a70;
-}
-
-#languagePanel button.active {
-    background-color: #ffd700;
-    color: #1e3c72;
-    font-weight: bold;
-}
-
-/* Hide Google Translate default widget */
-#google_translate_element {
-    display: none !important;
-}
-
-.goog-te-banner-frame {
-    display: none !important;
-}
-
-.goog-te-balloon-frame {
-    display: none !important;
-}
-
-body {
-    top: 0 !important;
-}
-
-.skiptranslate {
-    display: none !important;
-}
-
 /* Settings Panel */
 #settingsPanel {
     position: fixed;
@@ -156,127 +65,553 @@ body {
     background-color: #1e3a70;
 }
 
-/* Dark Mode Styles */
+/* Dark Mode Core Styles */
 body.dark-mode {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: linear-gradient(to bottom, #0f1419 0%, #1a1a2e 100%) !important;
     color: #e0e0e0;
 }
 
 body.dark-mode .container {
-    background: #1e1e1e;
+    background: #1a1a2e !important;
     color: #e0e0e0;
 }
 
+/* Header and Navigation */
 body.dark-mode header {
-    background: linear-gradient(90deg, #16213e 0%, #4a5568 100%);
+    background: linear-gradient(135deg, #0f1419 0%, #1e1e3f 50%, #0f1419 100%) !important;
+    border-bottom-color: #ffd700 !important;
+}
+
+body.dark-mode .top-banner {
+    background: linear-gradient(90deg, #0f1419 0%, #1e1e3f 50%, #0f1419 100%) !important;
+    color: #ffd700 !important;
 }
 
 body.dark-mode nav {
-    background-color: #2d3748;
+    background: linear-gradient(90deg, #0f1419 0%, #1e1e3f 50%, #0f1419 100%) !important;
+    border-bottom-color: #ffd700 !important;
 }
 
 body.dark-mode nav a {
-    color: #e0e0e0;
+    color: #e0e0e0 !important;
 }
 
 body.dark-mode nav a:hover {
-    background-color: #4a5568;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-bottom-color: #ffd700 !important;
 }
 
-body.dark-mode .header {
-    background: linear-gradient(to bottom, #2d3748 0%, #1e1e1e 100%);
-    border-bottom-color: #4a90e2;
+/* Hero Section */
+body.dark-mode .hero,
+body.dark-mode .welcome-hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    border-bottom-color: #2d3748 !important;
 }
 
-body.dark-mode .section,
-body.dark-mode .court-section,
-body.dark-mode .ministry-card,
-body.dark-mode .party-card,
-body.dark-mode .organization-card {
-    background: linear-gradient(to bottom, #2d3748 0%, #1e1e1e 100%);
-    border-color: #4a90e2;
-    color: #e0e0e0;
+body.dark-mode .hero h2,
+body.dark-mode .welcome-hero h2 {
+    color: #4a90e2 !important;
 }
 
-body.dark-mode .section h2,
-body.dark-mode .section h3,
-body.dark-mode .court-title,
-body.dark-mode .ministry-card h3,
-body.dark-mode .party-card h4,
-body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
-    color: #4a90e2;
+body.dark-mode .hero p,
+body.dark-mode .welcome-hero p {
+    color: #b0b0b0 !important;
 }
 
+/* Cards */
 body.dark-mode .card {
-    background: #2d3748;
-    color: #e0e0e0;
+    background: #2d3748 !important;
+    color: #e0e0e0 !important;
+    border-top-color: #4a90e2 !important;
+    border-left-color: #e63946 !important;
+    border-color: #2d3748 !important;
 }
 
 body.dark-mode .card h3 {
-    color: #4a90e2;
+    color: #4a90e2 !important;
 }
 
-body.dark-mode footer {
-    background: linear-gradient(to bottom, #16213e 0%, #0f1419 100%);
+body.dark-mode .card p {
+    color: #b0b0b0 !important;
 }
 
-body.dark-mode .ministry-section {
-    background: #1a1a2e;
+body.dark-mode .card:hover {
+    box-shadow: 0 4px 16px rgba(74, 144, 226, 0.3) !important;
 }
 
+/* Ministry Cards */
+body.dark-mode .ministry-card,
+body.dark-mode .chapter-card {
+    background: #2d3748 !important;
+    color: #e0e0e0 !important;
+    border-left-color: #4a90e2 !important;
+    border-top-color: #e63946 !important;
+}
+
+body.dark-mode .ministry-card h3,
+body.dark-mode .chapter-card h3 {
+    color: #4a90e2 !important;
+}
+
+body.dark-mode .ministry-card .minister {
+    color: #e63946 !important;
+}
+
+body.dark-mode .ministry-card p,
+body.dark-mode .chapter-card p {
+    color: #b0b0b0 !important;
+}
+
+body.dark-mode .ministry-card:hover,
+body.dark-mode .chapter-card:hover {
+    box-shadow: 0 4px 16px rgba(74, 144, 226, 0.3) !important;
+    border-left-color: #e63946 !important;
+}
+
+/* Sections */
+body.dark-mode .ministry-section,
+body.dark-mode .services-section,
+body.dark-mode .transparency-section,
+body.dark-mode .elections-section,
+body.dark-mode .contact-section,
+body.dark-mode .news {
+    background: #1a1a2e !important;
+    border-bottom-color: #2d3748 !important;
+}
+
+body.dark-mode .ministry-section:nth-child(even),
+body.dark-mode .transparency-section,
+body.dark-mode .contact-section {
+    background: #16213e !important;
+}
+
+body.dark-mode .ministry-section h2,
+body.dark-mode .services-section h2,
+body.dark-mode .transparency-section h2,
+body.dark-mode .elections-section h2,
+body.dark-mode .contact-section h2,
+body.dark-mode .news h2 {
+    color: #4a90e2 !important;
+}
+
+/* Service Items */
+body.dark-mode .service-item {
+    background: #2d3748 !important;
+    border-color: #2d3748 !important;
+    border-left-color: #e63946 !important;
+}
+
+body.dark-mode .service-item h3 {
+    color: #4a90e2 !important;
+}
+
+body.dark-mode .service-item p {
+    color: #b0b0b0 !important;
+}
+
+body.dark-mode .service-item:hover {
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3) !important;
+}
+
+body.dark-mode .service-btn {
+    background: linear-gradient(135deg, #4a90e2 0%, #e63946 100%) !important;
+}
+
+body.dark-mode .service-btn:hover {
+    background: linear-gradient(135deg, #e63946 0%, #4a90e2 100%) !important;
+}
+
+/* Transparency Cards */
+body.dark-mode .transparency-card {
+    background: #2d3748 !important;
+    border-top-color: #e63946 !important;
+}
+
+body.dark-mode .transparency-card h3 {
+    color: #4a90e2 !important;
+}
+
+body.dark-mode .transparency-card p {
+    color: #b0b0b0 !important;
+}
+
+body.dark-mode .transparency-card:hover {
+    box-shadow: 0 4px 16px rgba(230, 57, 70, 0.3) !important;
+}
+
+/* Contact Cards */
+body.dark-mode .contact-card {
+    background: #2d3748 !important;
+    border-left-color: #e63946 !important;
+    border-bottom-color: #ffd700 !important;
+}
+
+body.dark-mode .contact-card h3 {
+    color: #4a90e2 !important;
+}
+
+body.dark-mode .contact-card p,
+body.dark-mode .contact-card ul {
+    color: #b0b0b0 !important;
+}
+
+body.dark-mode .contact-card:hover {
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3) !important;
+}
+
+/* Stats Section */
+body.dark-mode .stats {
+    background: linear-gradient(135deg, #0f1419 0%, #1e1e3f 50%, #0f1419 100%) !important;
+    border-top-color: #ffd700 !important;
+    border-bottom-color: #ffd700 !important;
+}
+
+body.dark-mode .stats h2 {
+    color: #4a90e2 !important;
+}
+
+body.dark-mode .stat-number {
+    color: #ffd700 !important;
+}
+
+body.dark-mode .stat-item span {
+    color: #e0e0e0 !important;
+}
+
+/* News Items */
 body.dark-mode .news-item {
-    background: #2d3748;
-    border-left-color: #4a90e2;
+    background: #2d3748 !important;
+    border-left-color: #e63946 !important;
+    border-top-color: #4a90e2 !important;
 }
 
-body.dark-mode .status {
-    background-color: #4a5568;
-    color: #ffd700;
+body.dark-mode .news-item h3 {
+    color: #4a90e2 !important;
 }
 
-body.dark-mode .current-status {
-    background-color: #2d3748;
-    border-left-color: #4a90e2;
+body.dark-mode .news-item p {
+    color: #b0b0b0 !important;
 }
 
-body.dark-mode .motto {
-    background: linear-gradient(135deg, #2d3748 0%, #1e3a70 100%);
-    border-color: #4a90e2;
-    color: #4a90e2;
+body.dark-mode .news-date {
+    color: #e63946 !important;
 }
 
-body.dark-mode .register-box {
-    background: linear-gradient(135deg, #2d3748 0%, #1e3a70 100%);
-    border-color: #4a90e2;
+body.dark-mode .news-item:hover {
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3) !important;
 }
 
-body.dark-mode .requirements-list li,
-body.dark-mode .principles-list li,
-body.dark-mode .powers-list li {
-    border-bottom-color: #4a5568;
+/* Election Info */
+body.dark-mode .election-info {
+    background: #2d3748 !important;
+    border-color: #2d3748 !important;
 }
 
+body.dark-mode .election-info h3,
+body.dark-mode .election-info h4 {
+    color: #4a90e2 !important;
+}
+
+body.dark-mode .election-info p,
+body.dark-mode .election-info ul {
+    color: #b0b0b0 !important;
+}
+
+body.dark-mode .election-countdown {
+    background: linear-gradient(135deg, #0f1419 0%, #1e1e3f 50%, #0f1419 100%) !important;
+    border-color: #ffd700 !important;
+}
+
+body.dark-mode .election-countdown h3,
+body.dark-mode .election-countdown p {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .countdown-number {
+    color: #ffd700 !important;
+}
+
+/* Footer */
+body.dark-mode footer {
+    background: linear-gradient(135deg, #0f1419 0%, #1e1e3f 50%, #0f1419 100%) !important;
+    border-top-color: #ffd700 !important;
+}
+
+body.dark-mode footer a {
+    color: #ffd700 !important;
+}
+
+body.dark-mode footer a:hover {
+    color: #ffed4e !important;
+}
+
+body.dark-mode .footer-section h4 {
+    color: #ffd700 !important;
+}
+
+body.dark-mode .copyright {
+    border-top-color: rgba(255, 255, 255, 0.2) !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Constitution Specific */
+body.dark-mode .title-section {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    border-left-color: #e63946 !important;
+    border-right-color: #4a90e2 !important;
+}
+
+body.dark-mode .title-section h2 {
+    color: #4a90e2 !important;
+}
+
+body.dark-mode .title-section p {
+    color: #b0b0b0 !important;
+}
+
+body.dark-mode .constitution-content {
+    background: #1a1a2e !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .constitution-content h2 {
+    color: #4a90e2 !important;
+}
+
+body.dark-mode .constitution-content h3 {
+    color: #e63946 !important;
+}
+
+body.dark-mode .constitution-content p,
+body.dark-mode .constitution-content ul {
+    color: #b0b0b0 !important;
+}
+
+body.dark-mode .seal {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    border-top-color: #ffd700 !important;
+    color: #4a90e2 !important;
+}
+
+/* Decorative Elements */
+body.dark-mode .priority-banner {
+    background: linear-gradient(135deg, #e63946 0%, #c41e3a 100%) !important;
+}
+
+body.dark-mode .ribbon {
+    background: linear-gradient(135deg, #e63946 0%, #c41e3a 100%) !important;
+}
+
+body.dark-mode .floating-badge {
+    background: linear-gradient(135deg, #4a90e2 0%, #e63946 100%) !important;
+}
+
+body.dark-mode .icon-circle {
+    background: linear-gradient(135deg, #4a90e2 0%, #e63946 100%) !important;
+}
+
+body.dark-mode .seal-badge {
+    background: radial-gradient(circle, #ffd700 0%, #e63946 50%, #4a90e2 100%) !important;
+}
+
+/* Watermarks */
+body.dark-mode .watermark {
+    color: rgba(74, 144, 226, 0.05) !important;
+}
+
+/* Settings Panel Dark Mode */
 body.dark-mode #settingsPanel {
-    background: #2d3748;
-    border-color: #4a90e2;
-    color: #e0e0e0;
+    background: #2d3748 !important;
+    border-color: #4a90e2 !important;
+    color: #e0e0e0 !important;
 }
 
 body.dark-mode #settingsPanel h3 {
-    color: #4a90e2;
+    color: #4a90e2 !important;
+}
+
+body.dark-mode #settingsPanel button {
+    background-color: #4a90e2 !important;
+}
+
+body.dark-mode #settingsPanel button:hover {
+    background-color: #357abd !important;
+}
+
+/* Additional Decorative Elements Dark Mode */
+body.dark-mode .info-box {
+    background: #2d3748 !important;
+    border-left-color: #4a90e2 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .info-box:before {
+    color: #4a90e2 !important;
+}
+
+body.dark-mode .success-box {
+    background: #1e3a2e !important;
+    border-left-color: #28a745 !important;
+    color: #a8e6cf !important;
+}
+
+body.dark-mode .warning-box {
+    background: #3a3520 !important;
+    border-left-color: #ffd700 !important;
+    color: #ffe066 !important;
+}
+
+body.dark-mode .alert-box {
+    background: #3a1e1e !important;
+    border-left-color: #e63946 !important;
+    color: #ffb3ba !important;
+}
+
+body.dark-mode .government-badge {
+    background: #2d3748 !important;
+    border-color: #4a90e2 !important;
+    color: #4a90e2 !important;
+}
+
+body.dark-mode .verified-mark {
+    background: linear-gradient(135deg, #4a90e2 0%, #e63946 100%) !important;
+}
+
+body.dark-mode .card-accent {
+    border-color: transparent rgba(255, 215, 0, 0.2) transparent transparent !important;
+}
+
+body.dark-mode .frame-border {
+    border-color: #4a90e2 !important;
+}
+
+body.dark-mode .frame-border:before {
+    border-color: #e63946 !important;
+}
+
+body.dark-mode .gradient-border {
+    background-image: 
+        linear-gradient(#2d3748, #2d3748),
+        linear-gradient(135deg, #4a90e2 0%, #e63946 50%, #ffd700 100%) !important;
+}
+
+body.dark-mode .text-gradient {
+    background: linear-gradient(135deg, #4a90e2 0%, #e63946 50%, #ffd700 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+body.dark-mode .official-seal-bg:before {
+    color: rgba(255, 215, 0, 0.05) !important;
+}
+
+body.dark-mode .spotlight:before {
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.05) 0%, transparent 70%) !important;
 }
 
 /* Smooth transitions */
-body, .container, .section, .card, .ministry-card, .party-card {
-    transition: background-color 0.3s ease, color 0.3s ease;
+body, .container, .section, .card, .ministry-card, .party-card, .hero, .stats, .news-item {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
 }
 
+
+/* Discord Section and Community Elements */
+body.dark-mode .discord-section {
+    background: #1a1a2e !important;
+    border-bottom-color: #2d3748 !important;
+}
+
+body.dark-mode .discord-card {
+    background: #2d3748 !important;
+    border-color: #4a90e2 !important;
+}
+
+body.dark-mode .discord-card h3 {
+    color: #4a90e2 !important;
+}
+
+body.dark-mode .discord-card p {
+    color: #b0b0b0 !important;
+}
+
+body.dark-mode .discord-btn {
+    background: linear-gradient(135deg, #4a90e2 0%, #e63946 100%) !important;
+}
+
+body.dark-mode .discord-btn:hover {
+    background: linear-gradient(135deg, #e63946 0%, #4a90e2 100%) !important;
+}
+
+body.dark-mode .member-count {
+    color: #ffd700 !important;
+}
+
+body.dark-mode .floating-particles {
+    opacity: 0.3 !important;
+}
+
+body.dark-mode .particle {
+    background: rgba(255, 215, 0, 0.4) !important;
+}
+
+/* Page Loader Dark Mode */
+body.dark-mode #pageLoader {
+    background: linear-gradient(135deg, #0f1419 0%, #1a1a2e 100%) !important;
+}
+
+body.dark-mode .loader-content h2 {
+    color: #4a90e2 !important;
+}
+
+body.dark-mode .spinner {
+    border-color: rgba(74, 144, 226, 0.2) !important;
+    border-top-color: #4a90e2 !important;
+}
+
+/* Back to Top Button */
+body.dark-mode #backToTop {
+    opacity: 0.8 !important;
+}
+
+body.dark-mode #backToTop:hover {
+    opacity: 1 !important;
+}
+
+/* Pattern Backgrounds */
+body.dark-mode .pattern-bg {
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(74, 144, 226, 0.02) 10px, rgba(74, 144, 226, 0.02) 20px),
+        repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(230, 57, 70, 0.02) 10px, rgba(230, 57, 70, 0.02) 20px) !important;
+}
+
+body.dark-mode .dots-pattern {
+    background-image: radial-gradient(circle, rgba(74, 144, 226, 0.1) 1px, transparent 1px) !important;
+}
+
+body.dark-mode .stripes-pattern {
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(230, 57, 70, 0.03) 10px,
+        rgba(230, 57, 70, 0.03) 20px
+    ) !important;
+}
+
+body.dark-mode .hexagon-pattern {
+    background-image: 
+        linear-gradient(30deg, rgba(74, 144, 226, 0.02) 12%, transparent 12.5%, transparent 87%, rgba(74, 144, 226, 0.02) 87.5%, rgba(74, 144, 226, 0.02)),
+        linear-gradient(150deg, rgba(74, 144, 226, 0.02) 12%, transparent 12.5%, transparent 87%, rgba(74, 144, 226, 0.02) 87.5%, rgba(74, 144, 226, 0.02)),
+        linear-gradient(30deg, rgba(74, 144, 226, 0.02) 12%, transparent 12.5%, transparent 87%, rgba(74, 144, 226, 0.02) 87.5%, rgba(74, 144, 226, 0.02)),
+        linear-gradient(150deg, rgba(74, 144, 226, 0.02) 12%, transparent 12.5%, transparent 87%, rgba(74, 144, 226, 0.02) 87.5%, rgba(74, 144, 226, 0.02)) !important;
+}
 
 /* Search Button and Panel */
 #searchButton {
     position: fixed;
     top: 20px;
-    right: 140px;
+    right: 80px;
     z-index: 1000;
     background-color: #2c5aa0;
     color: white;
@@ -302,7 +637,7 @@ body, .container, .section, .card, .ministry-card, .party-card {
 #searchPanel {
     position: fixed;
     top: 80px;
-    right: 140px;
+    right: 80px;
     z-index: 999;
     background: white;
     border: 2px solid #2c5aa0;
@@ -387,32 +722,36 @@ body, .container, .section, .card, .ministry-card, .party-card {
 
 /* Dark mode search styles */
 body.dark-mode #searchPanel {
-    background: #2d3748;
-    border-color: #4a90e2;
+    background: #2d3748 !important;
+    border-color: #4a90e2 !important;
 }
 
 body.dark-mode #searchPanel h3 {
-    color: #4a90e2;
+    color: #4a90e2 !important;
 }
 
 body.dark-mode #searchInput {
-    background: #1e1e1e;
-    color: #e0e0e0;
-    border-color: #4a90e2;
+    background: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: #4a90e2 !important;
 }
 
 body.dark-mode .search-result-item {
-    background: #1e1e1e;
-    color: #e0e0e0;
-    border-left-color: #4a90e2;
+    background: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-left-color: #4a90e2 !important;
 }
 
 body.dark-mode .search-result-item:hover {
-    background: #16213e;
+    background: #16213e !important;
 }
 
 body.dark-mode .search-result-item strong {
-    color: #4a90e2;
+    color: #4a90e2 !important;
+}
+
+body.dark-mode #searchResults {
+    border-top-color: #2d3748 !important;
 }
 
 /* Mobile responsive */
