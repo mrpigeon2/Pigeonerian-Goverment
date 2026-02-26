@@ -182,7 +182,7 @@ function triggerNATOAnimation() {
     
     // Create 32 NATO member flags in a circle formation
     const numFlags = 32;
-    const radius = Math.min(window.innerWidth, window.innerHeight) * 0.35;
+    const radius = Math.min(window.innerWidth, window.innerHeight) * 0.42; // Increased from 0.35 to 0.42
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
     
